@@ -1,21 +1,17 @@
 @font-face {
-  font-family: 'Basis';
+  font-family: 'GT America Mono';
   font-weight: 400;
-  src: url('/BasisGrotesque-Regular.ttf')  format('truetype');
+  src: url('/GTAmericaMonoRegular.otf')  format('opentype');
 }
 @font-face {
-  font-family: 'Basis';
+  font-family: 'GT America Mono';
   font-weight: 600;
-  src: url('/BasisGrotesque-Bold.ttf')  format('truetype');
+  src: url('/GTAmericaMonoBold.otf')  format('opentype');
 }
 @font-face {
-  font-family: 'Basis';
-  font-weight: 500;
-  src: url('/BasisGrotesque-Medium.ttf')  format('truetype');
-}
-@font-face {
-  font-family: 'Basis-Mono';
-  src: url('/BasisGrotesque-Mono.ttf')  format('truetype');
+  font-family: 'Druk';
+  font-weight: 400;
+  src: url('/DrukXCondSuperItalic.otf')  format('opentype');
 }
 
 html {
@@ -30,7 +26,7 @@ html {
 }
 body {
   margin: 0;
-  font-family: 'Basis', sans-serif;
+  font-family: 'GT America Mono', sans-serif;
   letter-spacing: 0.06em;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
