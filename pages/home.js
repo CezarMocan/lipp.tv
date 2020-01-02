@@ -2,6 +2,10 @@ import Router from 'next/router';
 import { get } from 'dotty';
 import "../styles/styles.scss";
 
+import Creative from '../components/svg/creative.svg';
+import Production from '../components/svg/production.svg';
+import Post from '../components/svg/post.svg';
+
 export default class Home extends React.Component {
 
   constructor({ activeSlug }) {
@@ -32,7 +36,7 @@ export default class Home extends React.Component {
         </div>
         <div className="module">
           <div className="module__header-lg">
-            Creative
+            <Creative />
           </div>
           <div className="module__product-list">
             <div className="module__product-list__item">
@@ -48,7 +52,7 @@ export default class Home extends React.Component {
         </div>
         <div className="module">
           <div className="module__header-lg">
-            Production
+            <Production />
           </div>
           <div className="module__product-list">
             <div className="module__product-list__item">
@@ -61,7 +65,7 @@ export default class Home extends React.Component {
         </div>
         <div className="module">
           <div className="module__header-lg">
-            Post
+            <Post />
           </div>
           <div className="module__product-list">
             <div className="module__product-list__item">

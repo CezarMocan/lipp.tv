@@ -22,7 +22,7 @@ input, button, textarea {
 .hero {
   display: flex;
   &__image {
-
+    flex: 1;
   }
   &__footer {
     background: white;
@@ -40,11 +40,19 @@ input, button, textarea {
   background: black;
   border-bottom: 1px solid white;
   color: white;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   &__header-lg {
-    font-family: 'Druk';
-    font-size: 40rem;
     text-align: center;
-    text-transform: uppercase;
+    flex: 1;
+    display: flex;
+    > span.svg {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
   }
   &__product-list {
 
