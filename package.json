@@ -1,8 +1,8 @@
 {
-  "name": "fey-2019",
+  "name": "sos-2019",
   "version": "1.0.0",
   "author": "",
-  "description": "Fey 2019 Festival Website",
+  "description": "SOS Studio Website",
   "private": true,
   "main": "index.js",
   "dependencies": {
