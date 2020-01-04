@@ -29,8 +29,9 @@ input, button, textarea {
 .hero {
   display: flex;
   &__image {
-    flex: 1;
-    height: 100vh;
+    height: 75vh;
+    width: 100vw;
+    background-color: black;
   }
   &__footer {
     background: white;
