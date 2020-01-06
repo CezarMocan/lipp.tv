@@ -1,4 +1,5 @@
 import classnames from 'classnames'
+import { Player, ControlBar, BigPlayButton } from 'video-react'
 import { CUSTOM_CURSOR_STATES } from '../modules/constants'
 import Cursor from './cursor'
 
@@ -25,8 +26,10 @@ export default class Product extends React.Component {
         // If the current accordion is opening, we update the state to open and scroll the element into view.
         this.setState({ open: true }, () => {
           if (this._ref) this._ref.scrollIntoView({ behavior: 'auto', block: 'start' })
+          if (this._player) this._player.play()
         })
       } else {
+        if (this._player) this._player.pause()
         if (anotherOpen) {
           // If the current accordion is closing because another one has opened, 
           // we wait until after the other accordion has opened.
@@ -78,6 +81,11 @@ export default class Product extends React.Component {
       'open': open
     })
 
+    const videoPlayerCls = classnames({
+      'video-player': true,
+      'hidden': !open 
+    })
+
     return (
       <div ref={e => this._ref = e}
       >
@@ -91,7 +99,27 @@ export default class Product extends React.Component {
         </div>
 
         <div className={accordionCls}>
+          {/* <video autoplay loop className={videoPlayerCls}
+            poster=""
+            muted playsInline>
+            <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
+              type="video/mp4"/>
+          </video> */}
 
+          <Player ref={(p) => this._player = p } 
+            preload='auto'
+            playsInline 
+            src="http://media.w3.org/2010/05/bunny/movie.mp4"
+            // src="http://www.w3schools.com/html/mov_bbb.mp4"
+            fluid={false}
+            width="100%"
+            height="100%"
+            className={videoPlayerCls}
+
+          >
+            <ControlBar disableCompletely={true}/>
+            <BigPlayButton position="center" style={{display: 'none'}}/>
+          </Player>
         </div>
         { hasCustomCursor && <Cursor thumbnail={thumbnail} cursorState={customCursorState} /> }
       </div>

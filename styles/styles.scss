@@ -1,3 +1,4 @@
+@import "~video-react/styles/scss/video-react";
 
 $break_xl: 1500px;
 $break_lg: 1200px;
@@ -47,7 +48,6 @@ input, button, textarea {
   // height: 100vh;
   width: 100vw;
   background: black;
-  border-bottom: 1px solid white;
   color: white;
   display: flex;
   flex-direction: column;
@@ -89,11 +89,12 @@ input, button, textarea {
   }
 
   &__accordion-container {
+
     height: 0;
     background-color: blue;
 
     &.open {
-      height: 90vh;
+      height: 56.25vw;
     }
 
     transition: height 0.5s ease-in-out;
@@ -127,9 +128,24 @@ input, button, textarea {
       position: relative;
     }
   }
-
 }
 
+.video-player {
+  display: block;
+  video {
+    object-fit: cover;
+    object-position: top;
+  }
+  &.hidden {
+    .video-react-loading-spinner {
+      display: none !important;
+    }
+  }
+
+  .video-react-big-play-button {
+    display: none;
+  }
+}
 
 @import 'typography.scss';
 @import 'arrows.scss';
