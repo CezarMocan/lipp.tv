@@ -12,6 +12,7 @@ export default class Cursor extends React.Component {
 
   componentWillUnmount() {
     GlobalCursorManager.removeListener(this._cursorManagerLUID)
+    this._cursorManagerLUID = null
   }
 
   onGlobalMouseMove = (x, y) => {
@@ -20,18 +21,36 @@ export default class Cursor extends React.Component {
     this._ref.style.transform = `translateX(${x + offsetX}px) translateY(${y + offsetY}px)`
   }
 
+  getComponentForCursorState(state) {
+    switch (state) {
+      case CUSTOM_CURSOR_STATES.OPEN_PROJECT:
+        return (
+          <div class="custom-cursor__type">
+            <div> <strong>INFO</strong> </div>
+            <div class="arrow__down"></div>
+          </div>
+        )
+        break
+      case CUSTOM_CURSOR_STATES.CLOSE_PROJECT:
+        return (
+          <span class="custom-cursor__type"> <div class="arrow__up"></div> </span>
+        )
+        break      
+    }
+  }
+
   render() {
     const { cursorState, thumbnail } = this.props
 
     if (cursorState == CUSTOM_CURSOR_STATES.DISABLED) return null
+    const cursorComponent = this.getComponentForCursorState(cursorState)
 
     return (
       <div 
         className="custom-cursor__container" 
         ref={e => this._ref = e}
-        onMouseOver={e => e.preventDefault()}
-        onMouseOut={e => e.preventDefault()}
       >
+        { cursorComponent }
       </div>
     )
   }

@@ -107,11 +107,17 @@ input, button, textarea {
     pointer-events: none;
     top: 0;
     left: 0;
-    width: 25px;
-    height: 25px;
-    background-color: red;
-    border-radius: 25px;
+    color: $color-light;
+  }
+
+  &__type {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
 
-@import 'typography.scss'
+
+@import 'typography.scss';
+@import 'arrows.scss';
