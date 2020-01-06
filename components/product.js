@@ -66,7 +66,7 @@ export default class Product extends React.Component {
   }  
 
   render() {
-    const { client, title, thumbnail } = this.props
+    const { client, title, thumbnail, video } = this.props
     const { open, customCursorState } = this.state
     const hasCustomCursor = (customCursorState != CUSTOM_CURSOR_STATES.DISABLED)
 
@@ -99,27 +99,21 @@ export default class Product extends React.Component {
         </div>
 
         <div className={accordionCls}>
-          {/* <video autoplay loop className={videoPlayerCls}
-            poster=""
-            muted playsInline>
-            <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-              type="video/mp4"/>
-          </video> */}
+          { video &&
+            <Player ref={(p) => this._player = p } 
+              preload='auto'
+              playsInline 
+              src={video}
+              fluid={false}
+              width="100%"
+              height="100%"
+              className={videoPlayerCls}
 
-          <Player ref={(p) => this._player = p } 
-            preload='auto'
-            playsInline 
-            src="http://media.w3.org/2010/05/bunny/movie.mp4"
-            // src="http://www.w3schools.com/html/mov_bbb.mp4"
-            fluid={false}
-            width="100%"
-            height="100%"
-            className={videoPlayerCls}
-
-          >
-            <ControlBar disableCompletely={true}/>
-            <BigPlayButton position="center" style={{display: 'none'}}/>
-          </Player>
+            >
+              <ControlBar disableCompletely={true}/>
+              <BigPlayButton position="center" style={{display: 'none'}}/>
+            </Player>
+          }
         </div>
         { hasCustomCursor && <Cursor thumbnail={thumbnail} cursorState={customCursorState} /> }
       </div>
@@ -131,6 +125,7 @@ Product.defaultProps = {
   client: 'Client',
   title: 'Title',
   thumbnail: null,
+  video: null,
   open: false,
   anotherOpen: false,
   onClick: null

@@ -40,9 +40,25 @@ export default class Home extends React.Component {
     }
   }
 
+  getProductComponent(p, index, type) {
+    const { currentlyOpenItem } = this.state
+    
+    return (
+      <Product 
+        key={`project-${type}-${index}`} 
+        client={p.client} 
+        title={p.title}
+        thumbnail={p.thumbnail}
+        video={p.video}
+        onClick={this.onItemClick(p.id)}
+        open={p.id == currentlyOpenItem}
+        anotherOpen={p.id != currentlyOpenItem && currentlyOpenItem != null}
+      />
+    )
+  }
+
   render() {
     const { projects } = this.props 
-    const { currentlyOpenItem } = this.state
     
     return (
       <div className="container">
@@ -57,17 +73,7 @@ export default class Home extends React.Component {
             <Creative />
           </div>
           <div className="module__product-list">
-            { projects.creative && projects.creative.map((p, index) => (
-              <Product 
-                key={`project-creative-${index}`} 
-                client={p.client} 
-                title={p.title}
-                thumbnail={p.thumbnail}
-                onClick={this.onItemClick(p.id)}
-                open={p.id == currentlyOpenItem}
-                anotherOpen={p.id != currentlyOpenItem && currentlyOpenItem != null}
-              />
-            ))}
+            { projects.creative && projects.creative.map((p, index) => this.getProductComponent(p, index, 'creative'))}
           </div>
         </div>
         <div className="module">
@@ -75,17 +81,7 @@ export default class Home extends React.Component {
             <Production />
           </div>
           <div className="module__product-list">
-            { projects.production && projects.production.map((p, index) => (
-              <Product 
-                key={`project-production-${index}`} 
-                client={p.client} 
-                title={p.title}
-                thumbnail={p.thumbnail}
-                onClick={this.onItemClick(p.id)}
-                open={p.id == currentlyOpenItem}
-                anotherOpen={p.id != currentlyOpenItem && currentlyOpenItem != null}
-              />
-            ))}
+            { projects.production && projects.production.map((p, index) => this.getProductComponent(p, index, 'production'))}
           </div>
         </div>
         <div className="module">
@@ -93,17 +89,7 @@ export default class Home extends React.Component {
             <Post />
           </div>
           <div className="module__product-list">
-            { projects.post && projects.post.map((p, index) => (
-              <Product 
-                key={`project-post-${index}`} 
-                client={p.client} 
-                title={p.title}
-                thumbnail={p.thumbnail}
-                onClick={this.onItemClick(p.id)}
-                open={p.id == currentlyOpenItem}
-                anotherOpen={p.id != currentlyOpenItem && currentlyOpenItem != null}
-              />
-            ))}
+            { projects.post && projects.post.map((p, index) => this.getProductComponent(p, index, 'post'))}
           </div>
         </div>
 
