@@ -62,6 +62,7 @@ export default class Home extends React.Component {
                 key={`project-creative-${index}`} 
                 client={p.client} 
                 title={p.title}
+                thumbnail={p.thumbnail}
                 onClick={this.onItemClick(p.id)}
                 open={p.id == currentlyOpenItem}
                 anotherOpen={p.id != currentlyOpenItem && currentlyOpenItem != null}
@@ -79,6 +80,7 @@ export default class Home extends React.Component {
                 key={`project-production-${index}`} 
                 client={p.client} 
                 title={p.title}
+                thumbnail={p.thumbnail}
                 onClick={this.onItemClick(p.id)}
                 open={p.id == currentlyOpenItem}
                 anotherOpen={p.id != currentlyOpenItem && currentlyOpenItem != null}
@@ -96,6 +98,7 @@ export default class Home extends React.Component {
                 key={`project-post-${index}`} 
                 client={p.client} 
                 title={p.title}
+                thumbnail={p.thumbnail}
                 onClick={this.onItemClick(p.id)}
                 open={p.id == currentlyOpenItem}
                 anotherOpen={p.id != currentlyOpenItem && currentlyOpenItem != null}
@@ -105,7 +108,6 @@ export default class Home extends React.Component {
         </div>
 
         <div className="module"></div>
-        {/* <Cursor/> */}
       </div>
     )
   }

@@ -110,12 +110,24 @@ input, button, textarea {
     color: $color-light;
   }
 
-  &__type {
+  &__content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    &__image {
+      position: absolute;
+      left: -10px;
+      bottom: -10px;
+      width: 250px;
+    }
+
+    &__type {
+      position: relative;
+    }
   }
+
 }
 
 

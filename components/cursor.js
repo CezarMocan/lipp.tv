@@ -22,18 +22,20 @@ export default class Cursor extends React.Component {
   }
 
   getComponentForCursorState(state) {
+    const { thumbnail } = this.props
     switch (state) {
       case CUSTOM_CURSOR_STATES.OPEN_PROJECT:
         return (
-          <div class="custom-cursor__type">
-            <div> <strong>INFO</strong> </div>
-            <div class="arrow__down"></div>
+          <div class="custom-cursor__content">
+            <img class="custom-cursor__content__image" src={thumbnail}/>
+            <div class="custom-cursor__content__type"> <strong>INFO</strong> </div>
+            <div class="custom-cursor__content__type arrow__down"></div>
           </div>
         )
         break
       case CUSTOM_CURSOR_STATES.CLOSE_PROJECT:
         return (
-          <span class="custom-cursor__type"> <div class="arrow__up"></div> </span>
+          <span class="custom-cursor__content"> <div class="arrow__up"></div> </span>
         )
         break      
     }
