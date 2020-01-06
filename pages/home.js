@@ -8,6 +8,7 @@ import Post from '../components/svg/post.svg';
 import Product from '../components/product'
 
 import { projects } from '../modules/mock.js'
+import GlobalCursorManager from '../modules/cursor'
 
 export default class Home extends React.Component {
   state = {
@@ -23,11 +24,11 @@ export default class Home extends React.Component {
   }
 
   componentDidMount() {
-
+    GlobalCursorManager.register()
   }
 
   componentWillUnmount() {
-
+    GlobalCursorManager.shutdown()
   }
 
   onItemClick = (id) => (e) => {
@@ -44,7 +45,7 @@ export default class Home extends React.Component {
     const { currentlyOpenItem } = this.state
     
     return (
-      <div className="">
+      <div className="container">
         <div className="module">
           <div className="hero__image" />
           <div className="hero__footer">
@@ -104,6 +105,7 @@ export default class Home extends React.Component {
         </div>
 
         <div className="module"></div>
+        {/* <Cursor/> */}
       </div>
     )
   }
