@@ -68,7 +68,7 @@ export default class Product extends React.Component {
     if (open != oldProps.open) {
       if (open) {
         // If the current accordion is opening, we update the state to open and scroll the element into view.
-        this.setState({ open: true }, () => {
+        this.setState({ open: true, customCursorState: CUSTOM_CURSOR_STATES.CLOSE_PROJECT }, () => {
           if (this._ref) this._ref.scrollIntoView({ behavior: 'auto', block: 'start' })
           if (this._players[0]) this._players[0].play()
         })
@@ -84,7 +84,7 @@ export default class Product extends React.Component {
         } else {
           // If the current accordion is closing because it has been clicked,
           // we close it directly.
-          this.setState({ open: false, overlayOpen: false })
+          this.setState({ open: false, overlayOpen: false, customCursorState: CUSTOM_CURSOR_STATES.OPEN_PROJECT })
         }
       }
     }
@@ -128,7 +128,7 @@ export default class Product extends React.Component {
     }
 
     if (this.inNavigationArea(this._lastMouseXPct) && !overlayOpen) return
-    
+
     this.setState({
       overlayOpen: !overlayOpen,
       customCursorState: overlayOpen ? CUSTOM_CURSOR_STATES.SHOW_INFO : CUSTOM_CURSOR_STATES.CLOSE_DESCRIPTION

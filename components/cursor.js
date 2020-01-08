@@ -52,7 +52,7 @@ export default class Cursor extends React.Component {
         return (
           <div className="custom-cursor__content">
             <div className="custom-cursor__content__type"> <strong>INFO</strong> </div>
-            <div className="custom-cursor__content__type arrow__up"></div>
+            <div className="custom-cursor__content__type arrow__down"></div>
           </div>
         )
         break  
@@ -60,7 +60,7 @@ export default class Cursor extends React.Component {
         return (
           <div className="custom-cursor__content">
             <div className="custom-cursor__content__type"> <strong>BACK</strong> </div>
-            <div className="custom-cursor__content__type arrow__down"></div>
+            <div className="custom-cursor__content__type arrow__up"></div>
           </div>
         )
         break  
