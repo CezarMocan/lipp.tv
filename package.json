@@ -24,6 +24,7 @@
     "react": "^16.10.2",
     "react-awesome-slider": "^2.4.0",
     "react-dom": "^16.10.2",
+    "react-transition-group": "^4.3.0",
     "sanity-mux-player": "^0.0.26",
     "serverless-next.js": "^1.6.0",
     "video-react": "^0.14.1",

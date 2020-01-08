@@ -28,7 +28,7 @@ export default class Cursor extends React.Component {
         return (
           <div className="custom-cursor__content">
             <img className="custom-cursor__content__image" src={thumbnail}/>
-            <div className="custom-cursor__content__type"> <strong>INFO</strong> </div>
+            <div className="custom-cursor__content__type"> <strong>WATCH</strong> </div>
             <div className="custom-cursor__content__type arrow__down"></div>
           </div>
         )

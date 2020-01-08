@@ -12,6 +12,18 @@ $color-light: white;
 $color-dark: black;
 $color-highlight: #FFBB00;
 
+.color--light {
+  color: $color-light;
+}
+
+.color--dark {
+  color: $color-dark;  
+}
+
+.color--highlight {
+  color: $color-highlight;
+}
+
 html {
   background: var(--white);
   scroll-behavior: smooth;
@@ -47,8 +59,8 @@ input, button, textarea {
 .module {
   // height: 100vh;
   width: 100vw;
-  background: black;
-  color: white;
+  background: $color-dark;
+  color: $color-light;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -89,7 +101,7 @@ input, button, textarea {
   }
 
   &__accordion-container {
-
+    position: relative;
     height: 0;
     background-color: blue;
 
@@ -98,6 +110,26 @@ input, button, textarea {
     }
 
     transition: height 0.5s ease-in-out;
+
+    &__description-overlay {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: $spacing-regular $spacing-small;
+        background-color: rgba(0, 0, 0, 0.85);        
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        display: none;
+
+      &.enter-state, &.enter-active, &.enter-done, &.exit-state, &.exit-active {
+        display: block;
+      }
+
+      &.enter-active, &.enter-done {
+        opacity: 1;
+      }
+    }
   }
 }
 
@@ -143,6 +175,10 @@ input, button, textarea {
   }
 
   .video-react-big-play-button {
+    display: none;
+  }
+
+  .video-react-bezel {
     display: none;
   }
 }
