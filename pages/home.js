@@ -49,7 +49,7 @@ export default class Home extends React.Component {
         client={p.client} 
         title={p.title}
         thumbnail={p.thumbnail}
-        video={p.video}
+        assets={p.assets}
         description={p.description}
         onClick={this.onItemClick(p.id)}
         open={p.id == currentlyOpenItem}

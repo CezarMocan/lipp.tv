@@ -114,7 +114,9 @@ input, button, textarea {
     cursor: none !important;
 
     &.open {
-      height: 56.25vw;
+      // height: 56.25vw;
+      height: calc(100vh - 45px);
+      // height: 40vh;
     }
 
     transition: height 0.5s ease-in-out;
@@ -171,11 +173,24 @@ input, button, textarea {
   }
 }
 
+.media-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-highlight;
+}
+
+.image-player {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .video-player {
   display: block;
   video {
     object-fit: cover;
-    object-position: top;
+    object-position: center;
   }
   &.hidden {
     .video-react-loading-spinner {

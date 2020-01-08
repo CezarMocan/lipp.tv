@@ -77,7 +77,7 @@ export default class Product extends React.Component {
         if (anotherOpen) {
           // If the current accordion is closing because another one has opened, 
           // we wait until after the other accordion has opened.
-          this.setState({ overlayOpen: false })
+          this.setState({ overlayOpen: false, customCursorState: CUSTOM_CURSOR_STATES.DISABLED })
           setTimeout(() => {
             this.setState({ open: false })
           }, 500)  
@@ -141,11 +141,54 @@ export default class Product extends React.Component {
     }
   }
 
+  renderVideo = (src, index) => {
+    const { open } = this.state
+    const videoPlayerCls = classnames({
+      'video-player': true,
+      'hidden': !open 
+    })
+
+    return (
+      <Player ref={(p) => {
+          this._players[index] = p
+          if (this._players[index])
+            this._players[index].subscribeToStateChange(this.handleVideoPlayerStateChange(index))
+        }} 
+        key={`player-${index}`}
+        preload='auto'
+        playsInline 
+        src={src}
+        fluid={false}
+        width="100%"
+        height="100%"
+        className={videoPlayerCls}
+      >
+        <ControlBar disableCompletely={true}/>
+      </Player> 
+    )
+  }
+
+  renderImage = (src, index) => {
+    const { open } = this.state
+    const imageCls = classnames({
+      'image-player': true,
+      'hidden': !open 
+    })
+
+    return (
+      <img 
+        key={`image-${index}`}
+        src={src}
+        height="100%"
+        className={imageCls}
+      />
+    )
+  }
+
   render() {
-    const { client, title, thumbnail, video, description } = this.props
+    const { client, title, thumbnail, assets, description } = this.props
     const { open, overlayOpen, customCursorState } = this.state
     const hasCustomCursor = (customCursorState != CUSTOM_CURSOR_STATES.DISABLED)
-    console.log('render: ', customCursorState)
 
     const listItemCls = classnames({
       'module__product-list__item': true,
@@ -156,16 +199,6 @@ export default class Product extends React.Component {
     const accordionCls = classnames({
       'module__accordion-container': true,
       'open': open
-    })
-
-    const videoPlayerCls = classnames({
-      'video-player': true,
-      'hidden': !open 
-    })
-
-    const overlayCls = classnames({
-      'module__accordion-container__description-overlay': true,
-      hidden: !overlayOpen
     })
 
     return (
@@ -187,26 +220,11 @@ export default class Product extends React.Component {
           onMouseLeave={this.onAccordionMouseLeave}  
         >
           <AwesomeSlider fillParent bullets={false} organicArrows={false}>
-            {[1, 2, 3].map((p, index) => {
+            {assets && assets.map((p, index) => {
               return (
-                <div className="full-width-height aws-btn">
-                  <Player ref={(p) => {
-                      this._players[index] = p
-                      if (this._players[index])
-                        this._players[index].subscribeToStateChange(this.handleVideoPlayerStateChange(index))
-                    }} 
-                    key={`player-${p}`}
-                    preload='auto'
-                    playsInline 
-                    src={video}
-                    fluid={false}
-                    width="100%"
-                    height="100%"
-                    className={videoPlayerCls}
-                  >
-                    <ControlBar disableCompletely={true}/>
-                    {/* <BigPlayButton position="center" style={{display: 'none'}}/> */}
-                  </Player> 
+                <div className="media-container full-width-height aws-btn">
+                  { p.type == 'video' && this.renderVideo(p.url, index)}
+                  { p.type == 'image' && this.renderImage(p.url, index)}
                 </div>
               )
             })}
@@ -227,8 +245,8 @@ Product.defaultProps = {
   client: 'Client',
   title: 'Title',
   thumbnail: null,
-  video: null,
   description: '',
+  assets: [],
   open: false,
   anotherOpen: false,
   onClick: null
