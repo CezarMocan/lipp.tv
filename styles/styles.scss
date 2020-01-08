@@ -1,4 +1,6 @@
+@import 'custom-aws.scss';
 @import "~video-react/styles/scss/video-react";
+@import "~react-awesome-slider/dist/styles";
 
 $break_xl: 1500px;
 $break_lg: 1200px;
@@ -22,6 +24,11 @@ $color-highlight: #FFBB00;
 
 .color--highlight {
   color: $color-highlight;
+}
+
+.full-width-height {
+  width: 100%;
+  height: 100%;
 }
 
 html {
@@ -104,6 +111,7 @@ input, button, textarea {
     position: relative;
     height: 0;
     background-color: blue;
+    cursor: none !important;
 
     &.open {
       height: 56.25vw;
@@ -112,6 +120,7 @@ input, button, textarea {
     transition: height 0.5s ease-in-out;
 
     &__description-overlay {
+        z-index: 10; // need z-index in order for the overlay to show up on top of the react-awesome-slider
         position: absolute;
         top: 0;
         width: 100%;
@@ -184,7 +193,7 @@ input, button, textarea {
 }
 
 .project-description__container {  
-  max-width: 50%;
+  max-width: 66%;
   @media (max-width: $break_lg) {
     max-width: 80%;
   }

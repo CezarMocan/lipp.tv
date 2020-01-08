@@ -37,7 +37,34 @@ export default class Cursor extends React.Component {
         return (
           <span className="custom-cursor__content"> <div className="arrow__up"></div> </span>
         )
-        break      
+        break
+      case CUSTOM_CURSOR_STATES.NEXT_PROJECT:
+        return (
+          <span className="custom-cursor__content"> <div className="arrow__right"></div> </span>
+        )
+        break
+      case CUSTOM_CURSOR_STATES.PREV_PROJECT:
+        return (
+          <span className="custom-cursor__content"> <div className="arrow__left"></div> </span>
+        )
+        break
+      case CUSTOM_CURSOR_STATES.SHOW_INFO:
+        return (
+          <div className="custom-cursor__content">
+            <div className="custom-cursor__content__type"> <strong>INFO</strong> </div>
+            <div className="custom-cursor__content__type arrow__up"></div>
+          </div>
+        )
+        break  
+      case CUSTOM_CURSOR_STATES.CLOSE_DESCRIPTION:
+        return (
+          <div className="custom-cursor__content">
+            <div className="custom-cursor__content__type"> <strong>BACK</strong> </div>
+            <div className="custom-cursor__content__type arrow__down"></div>
+          </div>
+        )
+        break  
+  
     }
   }
 

@@ -1,8 +1,10 @@
 import classnames from 'classnames'
 import { Player, ControlBar, BigPlayButton } from 'video-react'
 import { CSSTransition } from 'react-transition-group'
-import { CUSTOM_CURSOR_STATES } from '../modules/constants'
+import AwesomeSlider from 'react-awesome-slider'
+import { CUSTOM_CURSOR_STATES, CAROUSEL_NAV_SCREEN_PCT } from '../modules/constants'
 import { transitionClassnames } from '../modules/cssTransitionHelper'
+import GlobalCursorManager from '../modules/cursor'
 import Cursor from './cursor'
 import ProjectDescription from './projectDescription'
 
@@ -10,17 +12,55 @@ export default class Product extends React.Component {
   state = {
     open: false,
     headerHovered: false,
+    accordionHovered: false,
     overlayOpen: false,
     defaultCursorClass: 'cursor--default',
     customCursorState: CUSTOM_CURSOR_STATES.DISABLED
   }
 
-  componentDidMount() {
+  constructor(props) {
+    super(props)
+    this._players = {}
+    this._lastMouseXPct = 0
+  }
 
+  inNavigationArea = (pct) => (this.inNavigationAreaLeft(pct) || this.inNavigationAreaRight(pct))
+  inNavigationAreaLeft = (pct) => (pct < CAROUSEL_NAV_SCREEN_PCT)
+  inNavigationAreaRight = (pct) => (pct > 100 - CAROUSEL_NAV_SCREEN_PCT)
+
+  onGlobalMouseMove = (clientX, clientY) => {
+    const { open, headerHovered, accordionHovered, customCursorState, overlayOpen } = this.state
+    if (!open || headerHovered || !accordionHovered) return
+
+    const pct = (clientX / window.innerWidth) * 100
+    this._lastMouseXPct = pct
+
+    if (overlayOpen) {
+      // We're in the project description window;
+      if (customCursorState == CUSTOM_CURSOR_STATES.CLOSE_DESCRIPTION) return
+      this.setState({ customCursorState: CUSTOM_CURSOR_STATES.CLOSE_DESCRIPTION })
+    } else if (this.inNavigationAreaLeft(pct)) {
+      // Mouse is in the navigation area, on the left
+      if (customCursorState == CUSTOM_CURSOR_STATES.PREV_PROJECT) return
+      this.setState({ customCursorState: CUSTOM_CURSOR_STATES.PREV_PROJECT })
+    } else if (this.inNavigationAreaRight(pct)) {
+      // Mouse is in the navigation area, on the right
+      if (customCursorState == CUSTOM_CURSOR_STATES.NEXT_PROJECT) return
+      this.setState({ customCursorState: CUSTOM_CURSOR_STATES.NEXT_PROJECT })
+    } else {
+      // Mouse is in the show info area
+      if (customCursorState == CUSTOM_CURSOR_STATES.SHOW_INFO) return
+      this.setState({ customCursorState: CUSTOM_CURSOR_STATES.SHOW_INFO })
+    }
+  }
+
+  componentDidMount() {
+    this._cursorManagerLUID = GlobalCursorManager.addListener(this.onGlobalMouseMove)
   }
 
   componentWillUnmount() {
-
+    GlobalCursorManager.removeListener(this._cursorManagerLUID)
+    this._cursorManagerLUID = null
   }
 
   componentDidUpdate(oldProps, oldState) {
@@ -30,10 +70,10 @@ export default class Product extends React.Component {
         // If the current accordion is opening, we update the state to open and scroll the element into view.
         this.setState({ open: true }, () => {
           if (this._ref) this._ref.scrollIntoView({ behavior: 'auto', block: 'start' })
-          if (this._player) this._player.play()
+          if (this._players[0]) this._players[0].play()
         })
       } else {
-        if (this._player) this._player.pause()
+        if (this._players[0]) this._players[0].pause()
         if (anotherOpen) {
           // If the current accordion is closing because another one has opened, 
           // we wait until after the other accordion has opened.
@@ -70,20 +110,32 @@ export default class Product extends React.Component {
     })
   }
 
+  onAccordionMouseEnter = (e) => {
+    this.setState({ accordionHovered: true })
+  }
+
+  onAccordionMouseLeave = (e) => {
+    this.setState({ accordionHovered: false })
+  }
+
   onAccordionClick = (e) => {
     e.stopPropagation();
     const { overlayOpen } = this.state
     if (overlayOpen) {
-      if (this._player && !this._player.ended) this._player.play()
+      if (this._players[0] && !this._players[0].ended) this._players[0].play()
     } else {
-      if (this._player) this._player.pause()
+      if (this._players[0]) this._players[0].pause()
     }
+
+    if (this.inNavigationArea(this._lastMouseXPct) && !overlayOpen) return
+    
     this.setState({
-      overlayOpen: !overlayOpen
+      overlayOpen: !overlayOpen,
+      customCursorState: overlayOpen ? CUSTOM_CURSOR_STATES.SHOW_INFO : CUSTOM_CURSOR_STATES.CLOSE_DESCRIPTION
     })
   }
 
-  handleVideoPlayerStateChange = (state, prevState) => {
+  handleVideoPlayerStateChange = (index) => (state, prevState) => {
     if (state.ended && !prevState.ended) {
       this.setState({ overlayOpen: true })
     }
@@ -93,6 +145,7 @@ export default class Product extends React.Component {
     const { client, title, thumbnail, video, description } = this.props
     const { open, overlayOpen, customCursorState } = this.state
     const hasCustomCursor = (customCursorState != CUSTOM_CURSOR_STATES.DISABLED)
+    console.log('render: ', customCursorState)
 
     const listItemCls = classnames({
       'module__product-list__item': true,
@@ -130,25 +183,34 @@ export default class Product extends React.Component {
         <div 
           className={accordionCls}
           onClick={this.onAccordionClick}
+          onMouseEnter={this.onAccordionMouseEnter}
+          onMouseLeave={this.onAccordionMouseLeave}  
         >
-          { video &&
-            <Player ref={(p) => {
-                this._player = p
-                if (this._player)
-                  this._player.subscribeToStateChange(this.handleVideoPlayerStateChange)
-              }} 
-              preload='auto'
-              playsInline 
-              src={video}
-              fluid={false}
-              width="100%"
-              height="100%"
-              className={videoPlayerCls}
-            >
-              <ControlBar disableCompletely={true}/>
-              <BigPlayButton position="center" style={{display: 'none'}}/>
-            </Player>
-          }
+          <AwesomeSlider fillParent bullets={false} organicArrows={false}>
+            {[1, 2, 3].map((p, index) => {
+              return (
+                <div className="full-width-height aws-btn">
+                  <Player ref={(p) => {
+                      this._players[index] = p
+                      if (this._players[index])
+                        this._players[index].subscribeToStateChange(this.handleVideoPlayerStateChange(index))
+                    }} 
+                    key={`player-${p}`}
+                    preload='auto'
+                    playsInline 
+                    src={video}
+                    fluid={false}
+                    width="100%"
+                    height="100%"
+                    className={videoPlayerCls}
+                  >
+                    <ControlBar disableCompletely={true}/>
+                    {/* <BigPlayButton position="center" style={{display: 'none'}}/> */}
+                  </Player> 
+                </div>
+              )
+            })}
+          </AwesomeSlider>
           <CSSTransition in={overlayOpen} timeout={250} classNames={transitionClassnames("module__accordion-container__description-overlay")}>
             <div className="module__accordion-container__description-overlay">
               <ProjectDescription text={description}/>
