@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group'
 import { CUSTOM_CURSOR_STATES } from '../modules/constants'
 import { transitionClassnames } from '../modules/cssTransitionHelper'
 import Cursor from './cursor'
+import ProjectDescription from './projectDescription'
 
 export default class Product extends React.Component {
   state = {
@@ -89,7 +90,7 @@ export default class Product extends React.Component {
   }
 
   render() {
-    const { client, title, thumbnail, video } = this.props
+    const { client, title, thumbnail, video, description } = this.props
     const { open, overlayOpen, customCursorState } = this.state
     const hasCustomCursor = (customCursorState != CUSTOM_CURSOR_STATES.DISABLED)
 
@@ -150,9 +151,7 @@ export default class Product extends React.Component {
           }
           <CSSTransition in={overlayOpen} timeout={250} classNames={transitionClassnames("module__accordion-container__description-overlay")}>
             <div className="module__accordion-container__description-overlay">
-              {/* <CSSTransition> */}
-                <p> A mista loba loba</p>
-              {/* </CSSTransition> */}
+              <ProjectDescription text={description}/>
             </div>
           </CSSTransition>
         </div>
@@ -167,6 +166,7 @@ Product.defaultProps = {
   title: 'Title',
   thumbnail: null,
   video: null,
+  description: '',
   open: false,
   anotherOpen: false,
   onClick: null

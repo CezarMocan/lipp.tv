@@ -50,6 +50,7 @@ export default class Home extends React.Component {
         title={p.title}
         thumbnail={p.thumbnail}
         video={p.video}
+        description={p.description}
         onClick={this.onItemClick(p.id)}
         open={p.id == currentlyOpenItem}
         anotherOpen={p.id != currentlyOpenItem && currentlyOpenItem != null}
