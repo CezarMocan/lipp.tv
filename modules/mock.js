@@ -13,11 +13,11 @@ export const projects =
                     type: "video"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-1.jpg",
+                    url: "https://d2zfqweka4o4h0.cloudfront.net/design/files/2016/09/PackageComposit.jpg",
                     type: "image"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-2.jpg",
+                    url: "https://miro.medium.com/max/3000/1*eyCUf3BQaCUnSHZJQ_cs5Q.jpeg",
                     type: "image"
                 },
                 {
@@ -42,11 +42,11 @@ export const projects =
                     type: "video"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-1.jpg",
+                    url: "https://d2zfqweka4o4h0.cloudfront.net/design/files/2016/09/PackageComposit.jpg",
                     type: "image"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-2.jpg",
+                    url: "https://miro.medium.com/max/3000/1*eyCUf3BQaCUnSHZJQ_cs5Q.jpeg",
                     type: "image"
                 },
                 {
@@ -71,11 +71,11 @@ export const projects =
                     type: "video"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-1.jpg",
+                    url: "https://d2zfqweka4o4h0.cloudfront.net/design/files/2016/09/PackageComposit.jpg",
                     type: "image"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-2.jpg",
+                    url: "https://miro.medium.com/max/3000/1*eyCUf3BQaCUnSHZJQ_cs5Q.jpeg",
                     type: "image"
                 },
                 {
@@ -102,11 +102,11 @@ export const projects =
                     type: "video"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-1.jpg",
+                    url: "https://d2zfqweka4o4h0.cloudfront.net/design/files/2016/09/PackageComposit.jpg",
                     type: "image"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-2.jpg",
+                    url: "https://miro.medium.com/max/3000/1*eyCUf3BQaCUnSHZJQ_cs5Q.jpeg",
                     type: "image"
                 },
                 {
@@ -131,11 +131,11 @@ export const projects =
                     type: "video"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-1.jpg",
+                    url: "https://d2zfqweka4o4h0.cloudfront.net/design/files/2016/09/PackageComposit.jpg",
                     type: "image"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-2.jpg",
+                    url: "https://miro.medium.com/max/3000/1*eyCUf3BQaCUnSHZJQ_cs5Q.jpeg",
                     type: "image"
                 },
                 {
@@ -163,11 +163,11 @@ export const projects =
                     type: "video"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-1.jpg",
+                    url: "https://d2zfqweka4o4h0.cloudfront.net/design/files/2016/09/PackageComposit.jpg",
                     type: "image"
                 },
                 {
-                    url: "https://media.sivasdescalzo.com/media/wysiwyg/Blog/10-2019/eric-timothy-carlson-svd-2.jpg",
+                    url: "https://miro.medium.com/max/3000/1*eyCUf3BQaCUnSHZJQ_cs5Q.jpeg",
                     type: "image"
                 },
                 {
