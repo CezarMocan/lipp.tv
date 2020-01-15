@@ -12,7 +12,9 @@ import GlobalCursorManager from '../modules/cursor'
 
 export default class Home extends React.Component {
   state = {
-    currentlyOpenItem: null
+    currentlyOpenItem: null,
+    windowHeight: 0,
+    listItemHeight: -1
   }
 
   constructor({ activeSlug }) {
@@ -23,7 +25,12 @@ export default class Home extends React.Component {
     return { projects }
   }
 
+  componentWillMount() {
+    // this.setState({ windowHeight: window.innerHeight })
+  }
+
   componentDidMount() {
+    this.setState({ windowHeight: window.innerHeight })
     GlobalCursorManager.register()
   }
 
@@ -40,12 +47,21 @@ export default class Home extends React.Component {
     }
   }
 
-  getProductComponent(p, index, type) {
+  setListItemHeight = (ref) => {
+    if (!this.hasListItemHeight) {
+      console.log('ref is: ', ref, ref._ref.clientHeight)
+      this.hasListItemHeight = true
+      this.setState({ listItemHeight: ref._ref.clientHeight })
+    }
+  }
+
+  getProductComponent(p, index, type, contentHeight) {
     const { currentlyOpenItem } = this.state
     
     return (
       <Product 
-        key={`project-${type}-${index}`} 
+        key={`project-${type}-${index}`}
+        ref={r => this.setListItemHeight(r)}
         client={p.client} 
         title={p.title}
         thumbnail={p.thumbnail}
@@ -53,6 +69,7 @@ export default class Home extends React.Component {
         description={p.description}
         onClick={this.onItemClick(p.id)}
         open={p.id == currentlyOpenItem}
+        contentHeight={contentHeight}
         anotherOpen={p.id != currentlyOpenItem && currentlyOpenItem != null}
       />
     )
@@ -60,6 +77,13 @@ export default class Home extends React.Component {
 
   render() {
     const { projects } = this.props 
+    const { windowHeight, listItemHeight } = this.state
+
+    const contentHeights = {
+      creative: windowHeight - listItemHeight * projects.creative.length,
+      production: windowHeight - listItemHeight * projects.production.length,
+      post: windowHeight - listItemHeight * projects.post.length,
+    }
     
     return (
       <div className="container">
@@ -70,27 +94,24 @@ export default class Home extends React.Component {
           </div>
         </div>
         <div className="module">
-          <div className="module__header-lg">
-            <Creative />
+          <div className="module__header-lg creative" style={{ height: contentHeights.creative }}>
           </div>
           <div className="module__product-list">
-            { projects.creative && projects.creative.map((p, index) => this.getProductComponent(p, index, 'creative'))}
+            { projects.creative && projects.creative.map((p, index) => this.getProductComponent(p, index, 'creative', contentHeights.creative))}
           </div>
         </div>
         <div className="module">
-          <div className="module__header-lg">
-            <Production />
+          <div className="module__header-lg production" style={{ height: contentHeights.production }}>
           </div>
           <div className="module__product-list">
-            { projects.production && projects.production.map((p, index) => this.getProductComponent(p, index, 'production'))}
+            { projects.production && projects.production.map((p, index) => this.getProductComponent(p, index, 'production', contentHeights.production))}
           </div>
         </div>
         <div className="module">
-          <div className="module__header-lg">
-            <Post />
+          <div className="module__header-lg post" style={{ height: contentHeights.post }}>
           </div>
           <div className="module__product-list">
-            { projects.post && projects.post.map((p, index) => this.getProductComponent(p, index, 'post'))}
+            { projects.post && projects.post.map((p, index) => this.getProductComponent(p, index, 'post', contentHeights.post))}
           </div>
         </div>
 

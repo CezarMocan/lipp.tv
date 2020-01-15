@@ -64,23 +64,22 @@ export default class Product extends React.Component {
   }
 
   componentDidUpdate(oldProps, oldState) {
-    const { open, anotherOpen } = this.props
+    const { open, anotherOpen, containerRef } = this.props
     if (open != oldProps.open) {
       if (open) {
         // If the current accordion is opening, we update the state to open and scroll the element into view.
         this.setState({ open: true, customCursorState: CUSTOM_CURSOR_STATES.CLOSE_PROJECT }, () => {
-          if (this._ref) this._ref.scrollIntoView({ behavior: 'auto', block: 'start' })
-          if (this._players[0]) this._players[0].play()
-        })
+          if (this._players[0]) this._players[0].play()  
+          setTimeout(() => {
+            if (containerRef) containerRef.scrollIntoView({ behavior: 'auto', block: 'start' })
+          }, 500)  
+        })  
       } else {
         if (this._players[0]) this._players[0].pause()
         if (anotherOpen) {
           // If the current accordion is closing because another one has opened, 
           // we wait until after the other accordion has opened.
-          this.setState({ overlayOpen: false, customCursorState: CUSTOM_CURSOR_STATES.DISABLED })
-          setTimeout(() => {
-            this.setState({ open: false })
-          }, 500)  
+          this.setState({ overlayOpen: false, open: false, customCursorState: CUSTOM_CURSOR_STATES.DISABLED })
         } else {
           // If the current accordion is closing because it has been clicked,
           // we close it directly.
@@ -186,7 +185,7 @@ export default class Product extends React.Component {
   }
 
   render() {
-    const { client, title, thumbnail, assets, description } = this.props
+    const { client, title, thumbnail, assets, description, contentHeight } = this.props
     const { open, overlayOpen, customCursorState } = this.state
     const hasCustomCursor = (customCursorState != CUSTOM_CURSOR_STATES.DISABLED)
 
@@ -200,6 +199,7 @@ export default class Product extends React.Component {
       'module__accordion-container': true,
       'open': open
     })
+    let accordionHeight = open ? contentHeight : 0
 
     return (
       <div ref={e => this._ref = e}
@@ -217,7 +217,8 @@ export default class Product extends React.Component {
           className={accordionCls}
           onClick={this.onAccordionClick}
           onMouseEnter={this.onAccordionMouseEnter}
-          onMouseLeave={this.onAccordionMouseLeave}  
+          onMouseLeave={this.onAccordionMouseLeave}
+          style={{height: accordionHeight}}
         >
           <AwesomeSlider fillParent bullets={false} organicArrows={false}>
             {assets && assets.map((p, index) => {
@@ -249,5 +250,6 @@ Product.defaultProps = {
   assets: [],
   open: false,
   anotherOpen: false,
+  contentHeight: 0,
   onClick: null
 }
