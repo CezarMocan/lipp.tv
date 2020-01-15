@@ -19,6 +19,9 @@ export default class Home extends React.Component {
 
   constructor({ activeSlug }) {
     super();
+    this.creativeContainerRef = React.createRef()
+    this.productionContainerRef = React.createRef()
+    this.postContainerRef = React.createRef()
   }
 
   static async getInitialProps({ req }) {
@@ -51,11 +54,11 @@ export default class Home extends React.Component {
     if (!this.hasListItemHeight) {
       console.log('ref is: ', ref, ref._ref.clientHeight)
       this.hasListItemHeight = true
-      this.setState({ listItemHeight: ref._ref.clientHeight })
+      this.setState({ listItemHeight: ref._ref.clientHeight - 1 })
     }
   }
 
-  getProductComponent(p, index, type, contentHeight) {
+  getProductComponent(p, index, type, contentHeight, containerRef) {
     const { currentlyOpenItem } = this.state
     
     return (
@@ -70,6 +73,7 @@ export default class Home extends React.Component {
         onClick={this.onItemClick(p.id)}
         open={p.id == currentlyOpenItem}
         contentHeight={contentHeight}
+        containerRef={containerRef}
         anotherOpen={p.id != currentlyOpenItem && currentlyOpenItem != null}
       />
     )
@@ -93,25 +97,25 @@ export default class Home extends React.Component {
             Creative - production - post - studio
           </div>
         </div>
-        <div className="module">
+        <div className="module" ref={this.creativeContainerRef}>
           <div className="module__header-lg creative" style={{ height: contentHeights.creative }}>
           </div>
           <div className="module__product-list">
-            { projects.creative && projects.creative.map((p, index) => this.getProductComponent(p, index, 'creative', contentHeights.creative))}
+            { projects.creative && projects.creative.map((p, index) => this.getProductComponent(p, index, 'creative', contentHeights.creative, this.creativeContainerRef))}
           </div>
         </div>
-        <div className="module">
+        <div className="module" ref={this.productionContainerRef}>
           <div className="module__header-lg production" style={{ height: contentHeights.production }}>
           </div>
           <div className="module__product-list">
-            { projects.production && projects.production.map((p, index) => this.getProductComponent(p, index, 'production', contentHeights.production))}
+            { projects.production && projects.production.map((p, index) => this.getProductComponent(p, index, 'production', contentHeights.production, this.productionContainerRef))}
           </div>
         </div>
-        <div className="module">
+        <div className="module" ref={this.postContainerRef}>
           <div className="module__header-lg post" style={{ height: contentHeights.post }}>
           </div>
           <div className="module__product-list">
-            { projects.post && projects.post.map((p, index) => this.getProductComponent(p, index, 'post', contentHeights.post))}
+            { projects.post && projects.post.map((p, index) => this.getProductComponent(p, index, 'post', contentHeights.post, this.postContainerRef))}
           </div>
         </div>
 

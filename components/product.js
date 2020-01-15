@@ -67,15 +67,14 @@ export default class Product extends React.Component {
     const { open, anotherOpen, containerRef } = this.props
     if (open != oldProps.open) {
       if (open) {
+        if (containerRef) containerRef.current.scrollIntoView({ behavior: 'auto', block: 'start' })
         // If the current accordion is opening, we update the state to open and scroll the element into view.
         this.setState({ open: true, customCursorState: CUSTOM_CURSOR_STATES.CLOSE_PROJECT }, () => {
           if (this._players[0]) this._players[0].play()  
-          setTimeout(() => {
-            if (containerRef) containerRef.scrollIntoView({ behavior: 'auto', block: 'start' })
-          }, 500)  
         })  
       } else {
         if (this._players[0]) this._players[0].pause()
+        if (containerRef) containerRef.current.scrollIntoView({ behavior: 'auto', block: 'start' })
         if (anotherOpen) {
           // If the current accordion is closing because another one has opened, 
           // we wait until after the other accordion has opened.
