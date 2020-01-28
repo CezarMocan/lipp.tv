@@ -1,6 +1,6 @@
 import { get } from 'dotty';
 import "../styles/styles.scss";
-
+import { withMainContext } from '../context/main'
 import Product from '../components/product'
 import GlobalCursorManager from '../modules/cursor'
 
@@ -42,7 +42,6 @@ class Home extends React.Component {
 
   setListItemHeight = (ref) => {
     if (!this.hasListItemHeight) {
-      console.log('ref is: ', ref, ref._ref.clientHeight)
       this.hasListItemHeight = true
       this.setState({ listItemHeight: ref._ref.clientHeight - 1 })
     }
@@ -58,7 +57,7 @@ class Home extends React.Component {
         client={p.client} 
         title={p.title}
         thumbnail={p.thumbnail}
-        assets={p.assets}
+        images={p.images}
         description={p.description}
         onClick={this.onItemClick(p.id)}
         open={p.id == currentlyOpenItem}
@@ -116,8 +115,8 @@ class Home extends React.Component {
 }
 
 export default withMainContext((context, props) => ({
-  about: context.about,
-  projects: context.projects,
+  // about: context.about,
+  // projects: context.projects,
 
   // toggleMouseTracker: context.action.toggleMouseTracker,
 }))(Home)

@@ -1,5 +1,4 @@
 import classnames from 'classnames'
-import { Player, ControlBar, BigPlayButton } from 'video-react'
 import { CSSTransition } from 'react-transition-group'
 import AwesomeSlider from 'react-awesome-slider'
 import { CUSTOM_CURSOR_STATES, CAROUSEL_NAV_SCREEN_PCT } from '../modules/constants'
@@ -7,6 +6,7 @@ import { transitionClassnames } from '../modules/cssTransitionHelper'
 import GlobalCursorManager from '../modules/cursor'
 import Cursor from './cursor'
 import ProjectDescription from './projectDescription'
+import MediaContainer from './mediaContainer'
 
 export default class Product extends React.Component {
   state = {
@@ -15,7 +15,9 @@ export default class Product extends React.Component {
     accordionHovered: false,
     overlayOpen: false,
     defaultCursorClass: 'cursor--default',
-    customCursorState: CUSTOM_CURSOR_STATES.DISABLED
+    customCursorState: CUSTOM_CURSOR_STATES.DISABLED,
+    windowWidth: 0,
+    windowHeight: 0
   }
 
   constructor(props) {
@@ -56,6 +58,10 @@ export default class Product extends React.Component {
 
   componentDidMount() {
     this._cursorManagerLUID = GlobalCursorManager.addListener(this.onGlobalMouseMove)
+    this.setState({
+      windowWidth: window.innerWidth,
+      windowHeight: window.innerHeight
+    })
   }
 
   componentWillUnmount() {
@@ -67,6 +73,7 @@ export default class Product extends React.Component {
     const { open, anotherOpen, containerRef } = this.props
     if (open != oldProps.open) {
       if (open) {
+        console.log('...Project opening...')
         if (containerRef) containerRef.current.scrollIntoView({ behavior: 'auto', block: 'start' })
         // If the current accordion is opening, we update the state to open and scroll the element into view.
         this.setState({ open: true, customCursorState: CUSTOM_CURSOR_STATES.CLOSE_PROJECT }, () => {
@@ -90,6 +97,7 @@ export default class Product extends React.Component {
 
   onHeaderClick = (e) => {
     const { onClick } = this.props
+    console.log('onHeaderClick')
     if (onClick) onClick(e)
   } 
 
@@ -139,53 +147,15 @@ export default class Product extends React.Component {
     }
   }
 
-  renderVideo = (src, index) => {
-    const { open } = this.state
-    const videoPlayerCls = classnames({
-      'video-player': true,
-      'hidden': !open 
-    })
-
-    return (
-      <Player ref={(p) => {
-          this._players[index] = p
-          if (this._players[index])
-            this._players[index].subscribeToStateChange(this.handleVideoPlayerStateChange(index))
-        }} 
-        key={`player-${index}`}
-        preload='auto'
-        playsInline 
-        src={src}
-        fluid={false}
-        width="100%"
-        height="100%"
-        className={videoPlayerCls}
-      >
-        <ControlBar disableCompletely={true}/>
-      </Player> 
-    )
-  }
-
-  renderImage = (src, index) => {
-    const { open } = this.state
-    const imageCls = classnames({
-      'image-player': true,
-      'hidden': !open 
-    })
-
-    return (
-      <img 
-        key={`image-${index}`}
-        src={src}
-        height="100%"
-        className={imageCls}
-      />
-    )
+  handleVideoRef = (index) => (p) => {
+    this._players[index] = p
+    if (this._players[index])
+      this._players[index].subscribeToStateChange(this.handleVideoPlayerStateChange(index))
   }
 
   render() {
-    const { client, title, thumbnail, assets, description, contentHeight } = this.props
-    const { open, overlayOpen, customCursorState } = this.state
+    const { client, title, thumbnail, images, description, contentHeight } = this.props
+    const { open, overlayOpen, customCursorState, windowWidth } = this.state
     const hasCustomCursor = (customCursorState != CUSTOM_CURSOR_STATES.DISABLED)
 
     const listItemCls = classnames({
@@ -219,22 +189,22 @@ export default class Product extends React.Component {
           onMouseLeave={this.onAccordionMouseLeave}
           style={{height: accordionHeight}}
         >
+
           <AwesomeSlider fillParent bullets={false} organicArrows={false}>
-            {assets && assets.map((p, index) => {
-              return (
-                <div className="media-container full-width-height aws-btn">
-                  { p.type == 'video' && this.renderVideo(p.url, index)}
-                  { p.type == 'image' && this.renderImage(p.url, index)}
-                </div>
-              )
-            })}
+            { images && images.map((asset, index) => (
+              <div key={`slider-item-${index}`} className="media-container full-width-height aws-btn">
+                <MediaContainer index={index} asset={asset} open={open} windowWidth={windowWidth} videoRefHandler={this.handleVideoRef(index)} />
+              </div>
+            ))}
           </AwesomeSlider>
+
           <CSSTransition in={overlayOpen} timeout={250} classNames={transitionClassnames("module__accordion-container__description-overlay")}>
             <div className="module__accordion-container__description-overlay">
               <ProjectDescription text={description}/>
             </div>
           </CSSTransition>
         </div>
+
         { hasCustomCursor && <Cursor thumbnail={thumbnail} cursorState={customCursorState} /> }
       </div>
     )
@@ -246,7 +216,7 @@ Product.defaultProps = {
   title: 'Title',
   thumbnail: null,
   description: '',
-  assets: [],
+  images: [],
   open: false,
   anotherOpen: false,
   contentHeight: 0,

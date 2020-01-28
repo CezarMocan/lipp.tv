@@ -11,10 +11,16 @@ export default class MainContextProvider extends React.Component {
     // projects: null
   }
 
-  // fetchProjects = async () => {
-  //   await sleep(1)
-  //   this.setState({ projects })
-  // }
+  render() {
+    const context = { ...this.state }
+    const { children } = this.props
+
+    return (
+        <MainContext.Provider value={context}>
+            { children }
+        </MainContext.Provider>
+    )
+  }
 }
 
 export const withMainContext = (mapping) => Component => props => {
