@@ -1,11 +1,14 @@
 import React from 'react'
 import classnames from 'classnames'
 import { Player, ControlBar, BigPlayButton } from 'video-react'
+import MuxPlayer from 'sanity-mux-player'
 import imageUrlBuilder from '@sanity/image-url'
 import sanityClient from '../modules/sanity'
+import HLSSource from './hlsSource'
 
 const imageBuilder = imageUrlBuilder(sanityClient)
 const imageUrlFor = (asset) => imageBuilder.image(asset)
+const videoUrlFor = (asset) => `https://stream.mux.com/${asset.playbackId}.m3u8`
 
 export default class MediaContainer extends React.Component {
   state = {
@@ -21,26 +24,29 @@ export default class MediaContainer extends React.Component {
       'hidden': !open 
     })
 
-    // console.log('Video asset: ', asset)
-
     return (
       <Player ref={ (p) => { if (videoRefHandler) videoRefHandler(p) } } 
         key={`player-${index}`}
         preload='auto'
         playsInline 
-        src={src}
+        // src={src}
         fluid={false}
         width="100%"
         height="100%"
+        autoplay={false}
         className={videoPlayerCls}
       >
         <ControlBar disableCompletely={true}/>
+        <HLSSource
+          isVideoChild
+          src={src}
+        />
       </Player> 
     )
   }
 
   renderImage = (asset, index) => {
-    const { open, windowWidth } = this.props
+    const { open } = this.props
     const { src } = this.state
 
     const imageCls = classnames({
@@ -58,28 +64,27 @@ export default class MediaContainer extends React.Component {
     )
   }
 
+  generateSrcFromAsset(asset) {
+    if (asset.video) {
+      return videoUrlFor(asset.video.asset)
+    } else if (asset.image) {
+      const { windowWidth } = this.props
+      return imageUrlFor(asset.image.asset).width(windowWidth).url()
+    }      
+    return ""
+  }
+
   componentDidUpdate(oldProps) {
     if (oldProps.windowWidth != this.props.windowWidth || oldProps.asset != this.props.asset) {
-      let src
-      const { asset, windowWidth } = this.props
-      if (asset.video) {
-        src = "https://cez-file-hosting.s3.amazonaws.com/BurgerKing12DaysofCheesemas030.mp4"
-      } else if (asset.image) {
-        src = imageUrlFor(asset.image.asset).width(windowWidth).url()
-      }      
+      const { asset } = this.props
+      let src = this.generateSrcFromAsset(asset)
       this.setState({ src })
     }
   }
 
   componentDidMount() {
-    const { asset, windowWidth } = this.props
-
-    let src    
-    if (asset.video) {
-      src = "https://cez-file-hosting.s3.amazonaws.com/BurgerKing12DaysofCheesemas030.mp4"
-    } else if (asset.image) {
-      src = imageUrlFor(asset.image.asset).width(windowWidth).url()
-    }
+    const { asset } = this.props
+    let src = this.generateSrcFromAsset(asset)
     this.setState({ src })
   }
 
