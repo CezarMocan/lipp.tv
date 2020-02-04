@@ -1,6 +1,10 @@
 import classnames from 'classnames'
+import imageUrlBuilder from '@sanity/image-url'
+import sanityClient from '../modules/sanity'
 import { CUSTOM_CURSOR_STATES } from '../modules/constants'
 import GlobalCursorManager from '../modules/cursor'
+
+const imageBuilder = imageUrlBuilder(sanityClient)
 
 export default class Cursor extends React.Component {
   state = {
@@ -23,11 +27,17 @@ export default class Cursor extends React.Component {
 
   getComponentForCursorState(state) {
     const { thumbnail } = this.props
+    let thumbnailSrc
+    if (thumbnail) {
+      let { asset } = thumbnail
+      thumbnailSrc = imageBuilder.image(asset).width(300)
+    }
+
     switch (state) {
       case CUSTOM_CURSOR_STATES.OPEN_PROJECT:
         return (
           <div className="custom-cursor__content">
-            <img className="custom-cursor__content__image" src={thumbnail}/>
+            <img className="custom-cursor__content__image" src={thumbnailSrc}/>
             <div className="custom-cursor__content__type"> <strong>WATCH</strong> </div>
             <div className="custom-cursor__content__type arrow__down"></div>
           </div>

@@ -1,7 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
 import { Player, ControlBar, BigPlayButton } from 'video-react'
-import MuxPlayer from 'sanity-mux-player'
 import imageUrlBuilder from '@sanity/image-url'
 import sanityClient from '../modules/sanity'
 import HLSSource from './hlsSource'

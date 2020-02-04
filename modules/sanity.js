@@ -15,6 +15,7 @@ export const allProjectsQuery = `*[_type == 'portfolio-item']{
   slug,
   description,
   hidden,
+  thumbnail { asset -> {...}},
   images[] {
     image { asset ->{...}},
     video{ asset ->{...}},
@@ -29,6 +30,7 @@ const buildOrderedProjectsQuery = listId => `*[_id == '${listId}']{
   items[] -> { 
     ...,
     "id": _id,
+    thumbnail { asset -> {...}},
     images[] {
       image { asset ->{...}},
       video{ asset ->{...}},

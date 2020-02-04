@@ -185,6 +185,8 @@ input, button, textarea {
       left: -10px;
       bottom: -10px;
       width: 250px;
+      height: 140px;
+      object-fit: cover;
     }
 
     &__type {
