@@ -2,6 +2,12 @@
 @import "~video-react/styles/scss/video-react";
 @import "~react-awesome-slider/dist/styles";
 
+$hamburger-layer-color         : #fff;
+$hamburger-layer-width         : 20px;
+$hamburger-layer-height        : 2px;
+$hamburger-layer-spacing       : 3px;
+@import "~hamburgers/_sass/hamburgers/hamburgers.scss";
+
 $break_xl: 1500px;
 $break_lg: 1200px;
 $break_med: 900px;
@@ -9,6 +15,7 @@ $break_sm: 600px;
 
 $spacing-small: 0.75rem;
 $spacing-regular: 1rem;
+$spacing-large: 2rem;
 
 $color-light: white;
 $color-dark: black;
@@ -46,6 +53,17 @@ input, button, textarea {
   }
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 25px;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .hero {
   display: flex;
   &__image {
@@ -54,22 +72,22 @@ input, button, textarea {
     background-color: black;
     position: relative;
 
-    &__img {
+    &__component {
       position: absolute;
       &.thinker {
         height: 35%;
-        left: 70%;
+        right: 8%;
         top: 16%;
       }
       &.eye {
-        height: 25%;
+        height: 28%;
         left: 50%;
         top: 40%;
         transform: translateX(-50%);
       }
       &.rose {
-        height: 30%;
-        left: 15%;
+        height: 33%;
+        left: 5%;
         top: 40%;
       }
       &.film {
@@ -79,17 +97,35 @@ input, button, textarea {
         top: 0;
         object-fit: cover;
       }
+      &.logo {
+        top: $spacing-large;
+        left: 50%;
+        height: 18%;
+        transform: translateX(-50%);
+      }
+      &.script {
+        left: 50%;
+        top: 72%;
+        font-family: 'Meie Script', sans-serif;
+        font-size: 48px;
+        text-align: center;
+        position: absolute;
+        transform: translateX(-50%);
+      }
+      &.footer {
+        flex: 0;
+        background: transparent;
+        font-family: 'Druk Regular';
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 8rem;
+        padding-top: 10px;
+        bottom: $spacing-large;
+        width: 100%;
+        text-align: center;
+      }
     }
-  }
-  &__footer {
-    flex: 0;
-    background: white;
-    font-family: 'Druk';
-    color: black;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 8rem;
-    padding-top: 10px;
   }
 }
 
@@ -132,7 +168,7 @@ input, button, textarea {
       background-image: url(/production.svg);
     }
     &.production-img {
-      top: 150px;
+      bottom: -20px;
       background-image: url(/img/production-2.png);
     }
     &.post {
