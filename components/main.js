@@ -1,5 +1,6 @@
 import { get } from 'dotty';
-import "../styles/styles.scss";
+import classnames from 'classnames'
+import "../styles/styles.scss"
 import { withMainContext } from '../context/main'
 import Product from '../components/product'
 import GlobalCursorManager from '../modules/cursor'
@@ -8,7 +9,8 @@ class Home extends React.Component {
   state = {
     currentlyOpenItem: null,
     windowHeight: 0,
-    listItemHeight: -1
+    listItemHeight: -1,
+    menuOpen: false
   }
 
   constructor({ activeSlug }) {
@@ -38,6 +40,10 @@ class Home extends React.Component {
     } else {
       this.setState({ currentlyOpenItem: id })
     }
+  }
+
+  onHamburgerClick = () => {
+    this.setState({ menuOpen: !this.state.menuOpen })
   }
 
   setListItemHeight = (ref) => {
@@ -70,7 +76,7 @@ class Home extends React.Component {
 
   render() {
     const { projects } = this.props
-    const { windowHeight, listItemHeight } = this.state
+    const { windowHeight, listItemHeight, menuOpen } = this.state
 
     const contentHeights = {
       creative: windowHeight - listItemHeight * projects.creative.length,
@@ -78,17 +84,26 @@ class Home extends React.Component {
       post: windowHeight - listItemHeight * projects.post.length,
     }
 
+    const hamburgerStyle = classnames({
+      'hamburger': true,
+      'hamburger--squeeze': true,
+      "is-active": menuOpen
+    })
+
     return (
       <div className="container">
         <div className="module">
           <div className="hero__image">
-            <img src="/img/header-film-strip.png" className="hero__image__img film"/>
-            <img src="/img/header-thinker.png" className="hero__image__img thinker"/>
-            <img src="/img/header-eye3.png" className="hero__image__img eye"/>
-            <img src="/img/header-rose.png" className="hero__image__img rose"/>
-          </div>
-          <div className="hero__footer">
-            Creative - production - post - studio
+            <img src="/img/header-film-strip.png" className="hero__image__component film"/>
+            <img src="/img/header-thinker.png" className="hero__image__component thinker"/>
+            <img src="/img/header-eye3.png" className="hero__image__component eye"/>
+            <img src="/img/header-rose.png" className="hero__image__component rose"/>
+            <a href="/"><img src="/img/logo.png" className="hero__image__component logo"/></a>
+            <div className="hero__image__component script">a creative production studio</div>
+
+            <div className="hero__image__component footer">
+              <a href="#creative">creative</a> - <a href="#production">production</a> - <a href="#post">post</a> - <a href="#studio">studio</a>
+            </div>
           </div>
         </div>
         <div className="module" ref={this.creativeContainerRef}>
@@ -114,6 +129,18 @@ class Home extends React.Component {
         </div>
 
         <div className="module"></div>
+
+        <div className="header">
+          <div></div>
+          <div></div>
+          <div className="hamburger-container">
+            <button class={hamburgerStyle} type="button" onClick={this.onHamburgerClick}>
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
     )
   }
