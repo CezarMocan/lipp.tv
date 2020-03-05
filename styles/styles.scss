@@ -107,7 +107,7 @@ input, button, textarea {
         left: 50%;
         top: 72%;
         font-family: 'Meie Script', sans-serif;
-        font-size: 48px;
+        font-size: 40px;
         text-align: center;
         position: absolute;
         transform: translateX(-50%);
@@ -319,3 +319,4 @@ input, button, textarea {
 
 @import 'typography.scss';
 @import 'arrows.scss';
+@import 'menu.scss';

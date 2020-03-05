@@ -3,6 +3,7 @@ import classnames from 'classnames'
 import "../styles/styles.scss"
 import { withMainContext } from '../context/main'
 import Product from '../components/product'
+import Menu from '../components/Menu'
 import GlobalCursorManager from '../modules/cursor'
 
 class Home extends React.Component {
@@ -129,6 +130,8 @@ class Home extends React.Component {
         </div>
 
         <div className="module"></div>
+
+        <Menu isOpen={menuOpen}/>
 
         <div className="header">
           <div></div>
