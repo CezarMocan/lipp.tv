@@ -3,9 +3,11 @@
 @import "~react-awesome-slider/dist/styles";
 
 $hamburger-layer-color         : #fff;
-$hamburger-layer-width         : 20px;
-$hamburger-layer-height        : 2px;
-$hamburger-layer-spacing       : 3px;
+$hamburger-layer-width         : 30px;
+$hamburger-layer-height        : 3px;
+$hamburger-layer-spacing       : 5px;
+$hamburger-padding-x           : 0;
+$hamburger-padding-y           : 0;
 @import "~hamburgers/_sass/hamburgers/hamburgers.scss";
 
 $break_xl: 1500px;
@@ -15,7 +17,7 @@ $break_sm: 600px;
 
 $spacing-small: 0.75rem;
 $spacing-regular: 1rem;
-$spacing-large: 2rem;
+$spacing-large: 3rem;
 
 $color-light: white;
 $color-dark: black;
@@ -53,15 +55,12 @@ input, button, textarea {
   }
 }
 
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 25px;
-  background: transparent;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+a {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .hero {
@@ -320,3 +319,4 @@ input, button, textarea {
 @import 'typography.scss';
 @import 'arrows.scss';
 @import 'menu.scss';
+@import 'header.scss';

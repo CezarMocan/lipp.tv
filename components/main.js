@@ -76,7 +76,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const { projects } = this.props
+    const { projects, about } = this.props
     const { windowHeight, listItemHeight, menuOpen } = this.state
 
     const contentHeights = {
@@ -131,7 +131,7 @@ class Home extends React.Component {
 
         <div className="module"></div>
 
-        <Menu isOpen={menuOpen}/>
+        <Menu isOpen={menuOpen} about={about}/>
 
         <div className="header">
           <div></div>
