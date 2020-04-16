@@ -1,8 +1,8 @@
 import React from 'react'
 import "../styles/styles.scss";
 import { withRouter } from 'next/router'
-import ContextProvider from '../context/main'
 import Main from '../components/main'
+import Head from '../components/head'
 
 const sleep = (s) => new Promise((res, rej) => setTimeout(res, s * 1000))
 
@@ -15,7 +15,8 @@ class Home extends React.Component {
   render() {
     return (
       <>
-        LIPP.TV
+        <Head/>
+        <Main/>
       </>
     )
   }
