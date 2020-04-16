@@ -1,5 +1,5 @@
 {
   "version": 2,
-  "name": "lipp-tv",
+  "name": "lipp.tv",
   "builds": [{ "src": "next.config.js", "use": "@now/next" }]
 }
