@@ -38,7 +38,10 @@
     "dev": "next -p 3030",
     "build": "next build",
     "start": "next start",
-    "now-build": "next build"
+    "now-build": "next build",
+    "export": "rm -rf .next && next build && next export",
+    "sync:s3": "AWS_DEFAULT_PROFILE=cezar-cli aws s3 sync out s3://lipp.tv",
+    "deploy": "npm run export && npm run sync:s3"
   },
   "keywords": [],
   "license": "MIT",
