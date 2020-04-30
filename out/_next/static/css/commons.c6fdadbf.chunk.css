@@ -1,0 +1,184 @@
+.color--light {
+  color: white; }
+
+.color--dark {
+  color: black; }
+
+.color--highlight {
+  color: #FFBB00; }
+
+.full-width-height {
+  width: 100%;
+  height: 100%; }
+
+html {
+  background: var(--white);
+  scroll-behavior: smooth; }
+
+* {
+  box-sizing: border-box; }
+
+input:focus, button:focus, textarea:focus {
+  outline: none; }
+
+a {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out; }
+  a:hover {
+    opacity: 0.5; }
+
+@font-face {
+  font-family: 'GT America Mono';
+  font-weight: 400;
+  src: url("/GTAmericaMonoRegular.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'GT America Mono';
+  font-weight: 600;
+  src: url("/GTAmericaMonoBold.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Druk';
+  font-weight: 400;
+  src: url("/DrukXCondSuperItalic.otf") format("opentype"); }
+
+@font-face {
+  font-family: 'Druk Regular';
+  font-weight: 400;
+  src: url("/DrukXCond-Super-Web.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Meie Script';
+  font-weight: 400;
+  src: url("/MeieScript-Regular.ttf") format("truetype"); }
+
+html {
+  font-size: 13px;
+  color: var(--black-ln); }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 11px; } }
+  @media (max-width: 900px) {
+    html {
+      font-size: 10.5px; } }
+
+body {
+  margin: 0;
+  font-family: 'GT America Mono', sans-serif;
+  letter-spacing: 0.06em;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; }
+
+h1, h2, h3, h4, p {
+  line-height: 1.4em;
+  font-weight: normal;
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.02em; }
+
+h1 {
+  font-family: 'Druk Regular';
+  font-size: 8rem;
+  line-height: 0.96em;
+  font-weight: 300; }
+
+h2 {
+  font-family: 'Druk Regular';
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 0.9em;
+  letter-spacing: 0.03em; }
+
+h3 {
+  font-family: 'Druk Regular';
+  font-size: 1.7rem;
+  line-height: 1.1;
+  font-weight: 500;
+  letter-spacing: 0.03em; }
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6; }
+
+p {
+  font-family: 'GT America Mono';
+  font-size: 1.1rem;
+  margin: 0;
+  padding-bottom: 0.5em;
+  line-height: 1.5em; }
+  p.small {
+    font-size: 0.95rem; }
+
+a {
+  color: var(--black-ln);
+  text-decoration: none; }
+
+.uppercase {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.06em; }
+
+.bold {
+  font-weight: 600;
+  letter-spacing: 0.08em; }
+
+.mono {
+  font-family: 'Basis-Mono';
+  font-size: 0.95em; }
+
+.arrow__down {
+  width: 0px;
+  height: 0px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid white;
+  margin-left: -2px; }
+
+.arrow__up {
+  width: 0px;
+  height: 0px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid white;
+  margin-right: -2px; }
+
+.arrow__left {
+  width: 0px;
+  height: 0px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid white;
+  margin-top: -2px; }
+
+.arrow__right {
+  width: 0px;
+  height: 0px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid white;
+  margin-bottom: -2px; }
+
+body {
+  background-color: black;
+  color: white; }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; }
+
+.content {
+  margin-top: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
