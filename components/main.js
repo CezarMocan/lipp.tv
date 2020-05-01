@@ -163,38 +163,36 @@ class Home extends React.Component {
 
 
           {/* CREDITS */}
-          <div className="section section--double section--align-start">
-            <div className="subsection">
-              <img className="fake-h1" src="img/credits.svg"/>
-              
-              <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--blue">Matt Romein</h3>
-                <div className="program-section-item color--blue type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
-              </div>
-
-              <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--green">Matt Romein</h3>
-                <div className="program-section-item color--green type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
-              </div>
-
-              <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--blue">Matt Romein</h3>
-                <div className="program-section-item color--blue type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
-              </div>
-
-              <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--green">Matt Romein</h3>
-                <div className="program-section-item color--green type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
-              </div>
-
-              <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--blue">Matt Romein</h3>
-                <div className="program-section-item color--blue type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
-              </div>          
-
-            </div>
-            <div className="subsection subsection--schedule-right">
+          <div className="section section--wide section--align-stretch">
+            <div className="subsection subsection--dark subsection--text">
+              <img className="fake-h1" src="img/credits.svg"/>              
               <h3>MEET LIPP TV’S PRODUCTION TEAM<br/> WE’RE NOT JUST MATT ROMEINS</h3>
+            </div>
+            <div className="subsection subsection--dark subsection--credits">   
+            <div className="program-section">
+                <h3 style={{marginBottom: 0}} className="program-section-item color--blue">Matt Romein</h3>
+                <div className="program-section-item color--blue type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+              </div>
+
+              <div className="program-section">
+                <h3 style={{marginBottom: 0}} className="program-section-item color--green">Matt Romein</h3>
+                <div className="program-section-item color--green type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+              </div>
+
+              <div className="program-section">
+                <h3 style={{marginBottom: 0}} className="program-section-item color--blue">Matt Romein</h3>
+                <div className="program-section-item color--blue type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+              </div>
+
+              <div className="program-section">
+                <h3 style={{marginBottom: 0}} className="program-section-item color--green">Matt Romein</h3>
+                <div className="program-section-item color--green type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+              </div>
+
+              <div className="program-section">
+                <h3 style={{marginBottom: 0}} className="program-section-item color--blue">Matt Romein</h3>
+                <div className="program-section-item color--blue type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+              </div>                     
               <div className="program-section">
                 <h3 style={{marginBottom: 0}} className="program-section-item color--green">Matt Romein</h3>
                 <div className="program-section-item color--green type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
@@ -221,6 +219,10 @@ class Home extends React.Component {
               </div>
 
             </div>
+          </div>
+
+          <div className="section section--wide section--align-stretch">
+            <img src="/img/logo.png"/>
           </div>
 
         </div>

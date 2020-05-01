@@ -165,6 +165,9 @@ img.about-image-fixed {
     &--align-start {
       align-items: flex-start;
     }
+    &--align-stretch {
+      align-items: stretch;
+    }
   }
 
   .subsection {
@@ -178,6 +181,10 @@ img.about-image-fixed {
     }
     &--image {
       padding: 50px 80px 50px 20px; 
+    }
+    &--credits {
+      padding-top: 75px;
+      padding-left: 25px;
     }
 
     &--schedule-right {
