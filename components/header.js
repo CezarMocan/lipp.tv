@@ -84,7 +84,7 @@ class Header extends React.Component {
         <div className="header-content">
           <div className="menu-item no-mobile"><a className={aboutCls} onClick={this.onAboutClick}>About</a></div>
           <div className="menu-item no-mobile"><a className={programsCls} onClick={this.onProgramClick}>Programs</a></div>
-          <div className="menu-item"><a onClick={this.onWlClick}><img ref={p => this._imgRef = p} src="/img/logo.png"/></a></div>
+          <div className="menu-item"><a className="no-hover" onClick={this.onWlClick}><img ref={p => this._imgRef = p} src="/img/logo.png"/></a></div>
           <div className="menu-item no-mobile"><a className={creditsCls} onClick={this.onCreditsClick}>Credits</a></div>
           <div className="menu-item no-mobile"><a className={wlCls} onClick={this.onWlClick}>Watch live</a></div>
         </div>

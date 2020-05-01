@@ -81,6 +81,11 @@ a {
   &:hover {
     opacity: 0.5;
   }
+  &.no-hover {
+    &:hover {
+      opacity: 1;
+    }
+  }
   cursor: pointer;
   text-decoration: underline;
 }
