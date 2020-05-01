@@ -78,9 +78,9 @@ class Home extends React.Component {
               <div className="placeholder-text section-item">
                 <h2>
                   <span class="color--orange">Public access tv</span> 
-                  <span> in</span> the age of <span class="color--green">social distancing</span> 
-                  <span class="color--blue"> is this too much?</span> this is really just a 
-                  <span class="color--yellow"> placeholder</span> for a <span class="color--orange">tagline</span>. 
+                  <span> in</span> the age of <span className="color--green">social distancing</span> 
+                  <span className="color--blue"> is this too much?</span> this is really just a 
+                  <span className="color--yellow"> placeholder</span> for a <span className="color--orange">tagline</span>. 
                 </h2>
               </div>
               <div className="placeholder-text section-item">
