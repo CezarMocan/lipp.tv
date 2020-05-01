@@ -5,7 +5,6 @@ import "../styles/styles.scss"
 import Header from './header'
 import { scrollTo } from './utils'
 
-const IS_STREAM_ACTIVE = false
 const MENU = {
   ABOUT: 'About',
   PROGRAMS: 'Programs',
@@ -59,6 +58,7 @@ class Home extends React.Component {
   }
   render() {
     const { TwitchEmbedVideo, highlight } = this.state
+    const { streamActive, channelName } = this.props
     return (
       <div className="container">
         <div className="bg-grid"></div>
@@ -73,7 +73,7 @@ class Home extends React.Component {
           onWlClick={this.onWlClick}
         />        
         <div className="content">
-          { !IS_STREAM_ACTIVE && 
+          { !streamActive && 
             <div className="twitch-stream-placeholder section" ref={p => this._wlRef = p}>
               <div className="placeholder-text section-item">
                 <h2>
@@ -86,7 +86,7 @@ class Home extends React.Component {
               <div className="placeholder-text section-item">
                 <h2>
                   LIPP TV will be live<span class="color--yellow"> here </span>
-                  as well as on <a class="color--yellow">TWITCH</a>, <a class="color--yellow">FACEBOOK</a>
+                  as well as on <a class="color--yellow" href="https://www.twitch.tv/lipp_tv_" target="__blank">TWITCH</a>, <a class="color--yellow">FACEBOOK</a>
                   <span> &amp; </span><a class="color--yellow">VIMEO</a><br/>
                   <span class="color--orange">may 11, 2020 8:30 pm</span> eastern time. 
                 </h2>
@@ -97,23 +97,27 @@ class Home extends React.Component {
               <a onClick={this.onAboutClick}><div className="arrow__down section-item"></div></a>
             </div>
           }
-          { IS_STREAM_ACTIVE &&
+          { streamActive &&
             <div className="twitch-stream section" ref={p => this._wlRef = p}>
               { TwitchEmbedVideo && <TwitchEmbedVideo
                 autoplay
-                channel="mattromein"
+                channel={channelName}
                 height="480"
                 muted={false}
                 targetId="twitch-embed"
                 width="940"
               /> }
+              <div className="announcement section-item section-item--small-margin" style={{marginTop: 50}}>
+                <h4>Scroll down for more details about lipp tv</h4>
+              </div>
+              <a onClick={this.onAboutClick}><div className="arrow__down section-item"></div></a>
             </div>          
           }
           {/* ABOUT */}
-          <div className="section section--wide" ref={p => this._aboutRef = p}>
+          <div className="section section--double section--transparent" ref={p => this._aboutRef = p}>
             <div className="subsection subsection--dark subsection--text">
               <img className="fake-h1" src="img/about.svg"/>
-              <h3 className="large">
+              <h3 className="light">
                 LIPP TV is Oreped unt etumquu ntectet quis eatem essit velia comniatios dest optas reperestiae exceria nimuscia voluptatur aut aut rem volupta quosae eaquam, consequature cotem quia. Incius et res deniet aligenissi volupta ium nimusam expe si iuri quae nesto tem quam repro blaborpos magnam fugias inissequam quosanditis maxim nobitem et explitium aditio. 
               </h3>
             </div>
@@ -202,72 +206,81 @@ class Home extends React.Component {
 
 
           {/* CREDITS */}
-          <div className="section section--wide section--align-stretch" ref={p => this._creditsRef = p}>
-            <div className="subsection subsection--dark subsection--text">
+          <div className="section section--double section--align-stretch" ref={p => this._creditsRef = p}>
+            <div className="subsection">
               <img className="fake-h1" src="img/credits.svg"/>              
-              <h3>MEET LIPP TV’S PRODUCTION TEAM<br/> WE’RE NOT JUST MATT ROMEINS</h3>
+              <h3 className="only-mobile" style={{marginBottom: 20}}>MEET LIPP TV’S PRODUCTION TEAM<br/> WE’RE NOT JUST MATT ROMEINS</h3>
+
+              <div className="program-section">
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold">Matt Romein</div>
+                <div className="program-section-item color--blue">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+              </div>
+
+              <div className="program-section">
+                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold">Matt Romein</div>
+                <div className="program-section-item color--green">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+              </div>
+
+              <div className="program-section">
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold">Matt Romein</div>
+                <div className="program-section-item color--blue">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+              </div>
+
+              <div className="program-section">
+                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold">Matt Romein</div>
+                <div className="program-section-item color--green">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+              </div>
+
+              <div className="program-section">
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold">Matt Romein</div>
+                <div className="program-section-item color--blue">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+              </div>
+
             </div>
-            <div className="subsection subsection--dark subsection--credits">   
-            <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--blue">Matt Romein</h3>
-                <div className="program-section-item color--blue type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+            <div className="subsection subsection--schedule-right">   
+              <h3 className="no-mobile" >MEET LIPP TV’S PRODUCTION TEAM<br/> WE’RE NOT JUST MATT ROMEINS</h3>
+              <div className="program-section">
+                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold">Matt Romein</div>
+                <div className="program-section-item color--green">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
               </div>
 
               <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--green">Matt Romein</h3>
-                <div className="program-section-item color--green type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold">Matt Romein</div>
+                <div className="program-section-item color--blue">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
               </div>
 
               <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--blue">Matt Romein</h3>
-                <div className="program-section-item color--blue type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold">Matt Romein</div>
+                <div className="program-section-item color--green">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
               </div>
 
               <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--green">Matt Romein</h3>
-                <div className="program-section-item color--green type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold">Matt Romein</div>
+                <div className="program-section-item color--blue">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
               </div>
 
               <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--blue">Matt Romein</h3>
-                <div className="program-section-item color--blue type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
-              </div>                     
-              <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--green">Matt Romein</h3>
-                <div className="program-section-item color--green type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
-              </div>
-
-              <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--blue">Matt Romein</h3>
-                <div className="program-section-item color--blue type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
-              </div>
-
-              <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--green">Matt Romein</h3>
-                <div className="program-section-item color--green type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
-              </div>
-
-              <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--blue">Matt Romein</h3>
-                <div className="program-section-item color--blue type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
-              </div>
-
-              <div className="program-section">
-                <h3 style={{marginBottom: 0}} className="program-section-item color--green">Matt Romein</h3>
-                <div className="program-section-item color--green type--bold">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold">Matt Romein</div>
+                <div className="program-section-item color--green">EXECUTIVE PRODUCER, CEO & CCO & CFO</div>
               </div>
 
             </div>
           </div>
 
           <div className="section section--footer section--align-stretch">
-            <img src="/img/logo.png"/>
+            {/* <img src="/img/logo.png"/> */}
+            <div style={{height: '100vh'}}></div>
           </div>
 
         </div>
       </div>
     )
   }
+}
+
+Home.defaultProps = {
+  streamActive: false,
+  channelName: 'lipp_tv_'
 }
 
 export default Home
