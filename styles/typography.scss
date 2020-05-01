@@ -74,6 +74,9 @@ h3 {
   font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  &.light {
+    font-family: 'NotoSans-SCM';
+  }
 }
 h4 {
   font-family: 'NotoSans-SCM';

@@ -220,26 +220,30 @@ img.about-image-fixed {
     background-color: $color-dark;
 
     @media only screen and (max-width: 868px) {
-      width: $content-size-mid;
-      
+      width: $content-size-mid;      
     }
     @media only screen and (max-width: 768px) {
       width: $content-size-lg;
       padding: 25px 25px 0 25px;
     }
-
     &--wide {
       background-color: transparent;
-      margin: 0;
+      margin: auto;
       padding: 0;
+      // padding: 125px 100px 0 100px;
       display: flex;
-      width: 100%;
+      width: $content-size;
       flex-direction: row; 
       align-items: stretch;
+      @media only screen and (max-width: 868px) {
+        width: $content-size-mid;      
+      }  
       @media only screen and (max-width: 768px) {
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+        width: $content-size-lg;
+        padding: 25px 25px 0 25px;  
       }  
     }
 
@@ -252,7 +256,10 @@ img.about-image-fixed {
         padding: 25px 0px 0 0px;
       }
     }
-
+    &--transparent {
+      background-color: transparent;
+      padding: 0;
+    }
     &--align-start {
       align-items: flex-start;
     }
@@ -268,6 +275,7 @@ img.about-image-fixed {
       width: 100%;
       img {
         max-width: 100%;
+        visibility: hidden;
       }
     }
   }
@@ -279,9 +287,9 @@ img.about-image-fixed {
       background-color: $color-dark;
     }
     &--text {
-      padding: 50px 20px 75px 80px;
+      padding-left: 50px;
       @media only screen and (max-width: 768px) {
-        padding: 20px 30px 20px 30px;
+        // padding: 20px 30px 20px 30px;
       }
     }
     &--image {
@@ -323,6 +331,9 @@ img.about-image-fixed {
   .program-section {
     text-transform: uppercase;
     margin-bottom: 15px;
+    @media only screen and (max-width: 768px) {
+      font-size: 13px;
+    }
   }
 
   .twitch-stream-placeholder {
@@ -334,4 +345,13 @@ img.about-image-fixed {
       text-align: center;
     }  
   }
+}
+
+.chat-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
