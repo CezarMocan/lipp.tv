@@ -1,0 +1,278 @@
+.color--light {
+  color: white; }
+
+.color--dark {
+  color: black; }
+
+.color--grey {
+  color: #898989; }
+
+.color--orange {
+  color: #d54c2c; }
+
+.color--yellow {
+  color: #d3cc27; }
+
+.color--blue {
+  color: #16a4be; }
+
+.color--green {
+  color: #46d17e; }
+
+.full-width-height {
+  width: 100%;
+  height: 100%; }
+
+html {
+  background: var(--white);
+  scroll-behavior: smooth; }
+
+* {
+  box-sizing: border-box; }
+
+input:focus, button:focus, textarea:focus {
+  outline: none; }
+
+a {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+  cursor: pointer;
+  text-decoration: underline; }
+  a:hover {
+    opacity: 0.5; }
+
+@font-face {
+  font-family: 'NotoSans-Regular';
+  font-weight: 400;
+  src: url("/NotoSans-Regular.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'NotoSans-SCM';
+  font-weight: 400;
+  src: url("/NotoSans-SemiCondensedMedium.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'NotoSans-Bold';
+  font-weight: 400;
+  src: url("/NotoSans-Bold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'NotoSans-CondensedExtraBold';
+  font-weight: 400;
+  src: url("/NotoSans-CondensedExtraBold.ttf") format("truetype"); }
+
+@font-face {
+  font-family: 'Tungsten-Bold';
+  font-weight: 400;
+  src: url("/Tungsten-Bold.otf") format("opentype"); }
+
+html {
+  font-size: 16px;
+  color: var(--black-ln); }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 11px; } }
+  @media (max-width: 900px) {
+    html {
+      font-size: 10.5px; } }
+
+body {
+  margin: 0;
+  font-family: 'NotoSans-Regular', sans-serif;
+  letter-spacing: 0.06em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; }
+
+h1, h2, h3, h4, p {
+  line-height: 1.4em;
+  font-weight: normal;
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.02em; }
+
+h1 {
+  font-family: 'Tungsten-Bold';
+  font-size: 11rem;
+  line-height: 0.96em;
+  font-weight: 300;
+  text-transform: uppercase; }
+
+img.fake-h1 {
+  height: 5rem;
+  margin: 30px 0; }
+
+h2 {
+  font-family: 'NotoSans-SCM';
+  font-size: 2.3rem;
+  font-weight: 400;
+  line-height: 1.15em;
+  letter-spacing: 0.03em;
+  text-transform: uppercase; }
+
+h3 {
+  font-family: 'NotoSans-CondensedExtraBold';
+  font-size: 1.8rem;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase; }
+
+h4 {
+  font-family: 'NotoSans-SCM';
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.6;
+  text-transform: uppercase; }
+
+.type--bold {
+  font-family: 'NotoSans-Bold'; }
+
+p {
+  font-family: 'NotoSans-Regular';
+  font-size: 1.1rem;
+  margin: 0;
+  padding-bottom: 0.5em;
+  line-height: 1.5em; }
+  p.small {
+    font-size: 0.95rem; }
+  p.large {
+    font-size: 1.9rem;
+    line-height: 1.3em; }
+
+.uppercase {
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 0.06em; }
+
+.bold {
+  font-weight: 600;
+  letter-spacing: 0.08em; }
+
+.mono {
+  font-family: 'Basis-Mono';
+  font-size: 0.95em; }
+
+.arrow__down {
+  width: 25px;
+  height: 25px;
+  border-top: 3px solid #c8c8c8;
+  border-left: 3px solid #c8c8c8;
+  transform: rotate(-135deg); }
+
+.arrow__up {
+  width: 25px;
+  height: 25px;
+  border-top: 3px solid #c8c8c8;
+  border-left: 3px solid #c8c8c8;
+  transform: rotate(-135deg); }
+
+.arrow__left {
+  width: 25px;
+  height: 25px;
+  border-top: 3px solid #c8c8c8;
+  border-left: 3px solid #c8c8c8;
+  transform: rotate(-135deg); }
+
+.arrow__right {
+  width: 25px;
+  height: 25px;
+  border-top: 3px solid #c8c8c8;
+  border-left: 3px solid #c8c8c8;
+  transform: rotate(-135deg); }
+
+body {
+  background-color: black;
+  color: #898989;
+  height: calc(100% + 15px);
+  width: calc(100% + 25px);
+  margin: 0;
+  background-image: repeating-linear-gradient(#ccc 0 1px, transparent 1px 100%), repeating-linear-gradient(90deg, #ccc 0 1px, transparent 1px 100%);
+  background-size: 71px 71px;
+  top: -15px;
+  left: -25px; }
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  background-color: black; }
+
+.content {
+  margin-top: 175px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative; }
+
+img.about-image-fixed {
+  max-width: 30vw;
+  max-height: 50vh;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translateX(5%) translateY(-30%); }
+
+.container {
+  max-width: 100%;
+  margin: auto; }
+  .container .section {
+    width: 81vw;
+    margin: auto;
+    padding: 125px 100px 0 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black; }
+    .container .section--wide {
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      width: 100%;
+      flex-direction: row; }
+    .container .section--double {
+      display: flex;
+      flex-direction: row;
+      padding: 75px 25px 0 25px; }
+    .container .section--align-start {
+      align-items: flex-start; }
+    .container .section--align-stretch {
+      align-items: stretch; }
+  .container .subsection {
+    flex: 1;
+    padding: 25px; }
+    .container .subsection--dark {
+      background-color: black; }
+    .container .subsection--text {
+      padding: 50px 20px 75px 80px; }
+    .container .subsection--image {
+      padding: 50px 80px 50px 20px; }
+    .container .subsection--credits {
+      padding-top: 75px;
+      padding-left: 25px; }
+    .container .subsection--schedule-right {
+      margin-top: 45px; }
+      .container .subsection--schedule-right h3 {
+        margin-bottom: 29px; }
+    .container .subsection img.about-image {
+      max-width: 80%; }
+  .container .section-item {
+    margin-bottom: 50px; }
+    .container .section-item--small-margin {
+      margin-bottom: 10px; }
+  .container .program-section {
+    text-transform: uppercase;
+    margin-bottom: 15px; }
+  .container .twitch-stream-placeholder .placeholder-text {
+    text-transform: uppercase;
+    text-align: center; }
+
