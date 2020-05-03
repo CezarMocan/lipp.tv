@@ -29,7 +29,7 @@ class Header extends React.Component {
 
     let logoSize = factor * (LOGO_SIZE_MAX - LOGO_SIZE_MIN) + LOGO_SIZE_MIN
 
-    if (this._imgRef) this._imgRef.style.height = `${logoSize}px`
+    if (this._imgRef) this._imgRef.style.height = `${logoSize}rem`
 
     let opacity = 1 - factor
     if (this._p1) this._p1.style.opacity = opacity
@@ -39,13 +39,16 @@ class Header extends React.Component {
   }
 
   calculateLogoSize = () => {
-    LOGO_SIZE_MAX = 250
-    if (window.innerWidth <= 1124) LOGO_SIZE_MAX = 150
-    if (window.innerWidth <= 768) LOGO_SIZE_MAX = 125
-    if (window.innerWidth <= 464) { 
-      LOGO_SIZE_MAX = 75
-      LOGO_SIZE_MIN = 50
-    }
+    LOGO_SIZE_MAX = 16
+    LOGO_SIZE_MIN = 6
+    if (window.innerWidth >= 2600) LOGO_SIZE_MAX = 14
+    if (window.innerWidth >= 3200) LOGO_SIZE_MAX = 11
+    if (window.innerWidth <= 1124) LOGO_SIZE_MAX = 14
+    if (window.innerWidth <= 768) LOGO_SIZE_MAX = 11
+    // if (window.innerWidth <= 464) { 
+    //   LOGO_SIZE_MAX = 75
+    //   LOGO_SIZE_MIN = 50
+    // }
     this.onWindowScroll()
   }
 
@@ -82,11 +85,11 @@ class Header extends React.Component {
       <div className="header">
         <div className="header-padding" ref={p => this._p1 = p}></div>
         <div className="header-content">
-          <div className="menu-item no-mobile"><a className={aboutCls} onClick={this.onAboutClick}>About</a></div>
-          <div className="menu-item no-mobile"><a className={programsCls} onClick={this.onProgramClick}>Programs</a></div>
-          <div className="menu-item"><a className="no-hover" onClick={this.onWlClick}><img ref={p => this._imgRef = p} src="/img/logo.png"/></a></div>
-          <div className="menu-item no-mobile"><a className={creditsCls} onClick={this.onCreditsClick}>Credits</a></div>
           <div className="menu-item no-mobile"><a className={wlCls} onClick={this.onWlClick}>Watch live</a></div>
+          <div className="menu-item no-mobile"><a className={aboutCls} onClick={this.onAboutClick}>About</a></div>
+          <div className="menu-item"><a className="no-hover" onClick={this.onWlClick}><img ref={p => this._imgRef = p} src="/img/logo.png"/></a></div>
+          <div className="menu-item no-mobile"><a className={programsCls} onClick={this.onProgramClick}>Programs</a></div>
+          <div className="menu-item no-mobile"><a className={creditsCls} onClick={this.onCreditsClick}>Credits</a></div>
         </div>
         <div className="header-padding" ref={p => this._p2 = p}></div>
       </div>

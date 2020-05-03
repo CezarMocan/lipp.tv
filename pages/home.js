@@ -37,7 +37,7 @@ class Home extends React.Component {
       )
     }
 
-    if (router.asPath == '/test-active') {
+    if (router.asPath == '/active') {
       this.streamActive = true
     }
 

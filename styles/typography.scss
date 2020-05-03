@@ -25,8 +25,20 @@
 }
 
 html {
-  font-size: 16px;
-  color: var(--black-ln);
+  font-size: 50px;
+  @media (max-width: 3800px) {
+    font-size: 30px;
+  }
+  // @media (max-width: 2201px) {
+  //   font-size: 24px;
+  // }
+  @media (max-width: 2200px) {
+    font-size: 20px;
+  }
+  @media (max-width: 1600px) {
+    font-size: 16px;
+  }
+  color: var(--black-ln);  
   @media (max-width: $break_lg) {
     font-size: 11px;
   }

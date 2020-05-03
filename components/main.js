@@ -14,7 +14,8 @@ const MENU = {
 
 class Home extends React.Component {
   state = {
-    highlight: MENU.WATCH_LIVE
+    highlight: MENU.WATCH_LIVE,
+    streamWidth: 960
   }
 
   constructor({ activeSlug }) {
@@ -26,20 +27,29 @@ class Home extends React.Component {
 
   componentDidMount() {
     this.setState({ 
-      TwitchEmbedVideo: require('react-twitch-embed-video')
+      TwitchEmbedVideo: require('react-twitch-embed-video'),
+      streamWidth: window.innerWidth * 0.7
     })
     this.onScroll()
+    window.addEventListener('resize', this.onWindowResize)
   }
 
   componentWillUnmount() {
+    window.removeEventListener('resize', this.onWindowResize)
+  }
+
+  onWindowResize = () => {
+    this.setState({ 
+      streamWidth: window.innerWidth * 0.7
+    })
   }
 
   onScroll = (e) => {
     console.log('onScroll', window.scrollY)
     let newHighlight = MENU.WATCH_LIVE
-    if (this._aboutRef.getBoundingClientRect().top < 60) newHighlight = MENU.ABOUT
-    if (this._programRef.getBoundingClientRect().top < 50) newHighlight = MENU.PROGRAMS
-    if (this._creditsRef.getBoundingClientRect().top < 60) newHighlight = MENU.CREDITS
+    if (this._aboutRef.getBoundingClientRect().top < 100) newHighlight = MENU.ABOUT
+    if (this._programRef.getBoundingClientRect().top < 75) newHighlight = MENU.PROGRAMS
+    if (this._creditsRef.getBoundingClientRect().top < 100) newHighlight = MENU.CREDITS
     if (newHighlight != this.state.highlight) {
       this.setState({ highlight: newHighlight })
     }
@@ -57,7 +67,7 @@ class Home extends React.Component {
     if (this._wlRef) window.scrollTo(0, 0)
   }
   render() {
-    const { TwitchEmbedVideo, highlight } = this.state
+    const { TwitchEmbedVideo, highlight, streamWidth } = this.state
     const { streamActive, channelName } = this.props
     return (
       <div className="container">
@@ -74,7 +84,7 @@ class Home extends React.Component {
         />        
         <div className="content">
           { !streamActive && 
-            <div className="twitch-stream-placeholder section" ref={p => this._wlRef = p}>
+            <div className="twitch-stream-placeholder section section--no-margin-top" ref={p => this._wlRef = p}>
               <div className="placeholder-text section-item">
                 <h2>
                   <span class="color--orange">Public access tv</span> 
@@ -98,14 +108,14 @@ class Home extends React.Component {
             </div>
           }
           { streamActive &&
-            <div className="twitch-stream section" ref={p => this._wlRef = p}>
+            <div className="twitch-stream section section--no-margin-top" ref={p => this._wlRef = p}>
               { TwitchEmbedVideo && <TwitchEmbedVideo
                 autoplay
                 channel={channelName}
-                height="480"
+                height={streamWidth < 800 ? streamWidth : streamWidth * 9 / 16}
                 muted={false}
                 targetId="twitch-embed"
-                width="940"
+                width={streamWidth}
               /> }
               <div className="announcement section-item section-item--small-margin" style={{marginTop: 50}}>
                 <h4>Scroll down for more details about lipp tv</h4>
@@ -114,7 +124,7 @@ class Home extends React.Component {
             </div>          
           }
           {/* ABOUT */}
-          <div className="section section--double section--transparent" ref={p => this._aboutRef = p}>
+          <div className="section section--double section--transparent section--align-stretch" ref={p => this._aboutRef = p}>
             <div className="subsection subsection--dark subsection--text">
               <img className="fake-h1" src="img/about.svg"/>
               <h3 className="light">
@@ -122,7 +132,7 @@ class Home extends React.Component {
               </h3>
             </div>
             <div className="subsection subsection--image">   
-              <img className="about-image" src="/img/face.png"/>           
+              <img className="about-image" src="/img/char2.png"/>           
             </div>
           </div>
 
@@ -269,7 +279,7 @@ class Home extends React.Component {
 
           <div className="section section--footer section--align-stretch">
             {/* <img src="/img/logo.png"/> */}
-            <div style={{height: '100vh'}}></div>
+            <div style={{height: '75px'}}></div>
           </div>
 
         </div>
