@@ -128,7 +128,13 @@ class Home extends React.Component {
             <div className="subsection subsection--dark subsection--text">
               <img className="fake-h1" src="img/about.svg"/>
               <h3 className="light">
-                LIPP TV is Oreped unt etumquu ntectet quis eatem essit velia comniatios dest optas reperestiae exceria nimuscia voluptatur aut aut rem volupta quosae eaquam, consequature cotem quia. Incius et res deniet aligenissi volupta ium nimusam expe si iuri quae nesto tem quam repro blaborpos magnam fugias inissequam quosanditis maxim nobitem et explitium aditio. 
+              LIPP TV IS THE FINAL PERFORMANCE PROJECT OF THE LIVE IMAGE PROCESSING AND PERFORMANCE (LIPP) CLASS AT NYU’S ITP. <br/>
+
+LIPP TV IS A CREATIVE RESPONSE TO HOW CODE, VIDEO NETWORKS, AND ART CAN BE USED TO CREATE A NEW EXPERIENCE IN LIVE PERFORMANCE. EACH STUDENT HAS CREATED THEIR OWN SHORT TV SHOW INFLUENCED BY VIDEO ART, EXPERIMENTAL ANIMATION, PUBLIC ACCESS TV, AND MORE. 
+<br/>
+THIS ENTIRE EVENT WAS CREATED REMOTELY AND IS PERFORMED REMOTELY, WITH STUDENTS CREATING THE WEBSITE, COMMERCIALS, MUSIC, AND ANIMATIONS.
+<br/>
+TUNE IN TO LIPP TV AND MAKE SURE TO JOIN THE CHAT AND TALK WITH OUR CREATORS AND PARTICIPATE IN THEIR SHOWS.
               </h3>
             </div>
             <div className="subsection subsection--image">   
