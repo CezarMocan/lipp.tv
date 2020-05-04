@@ -87,7 +87,7 @@ class Home extends React.Component {
             <div className="twitch-stream-placeholder section section--no-margin-top" ref={p => this._wlRef = p}>
               <div className="placeholder-text section-item">
                 <h2>
-                  <span class="color--yellow">Networked television</span> 
+                  <span class="color--yellow">Network(ed) television</span> 
                   <span> in</span> the age of <span className="color--green">social distancing.</span> 
                 </h2>
               </div>
@@ -130,14 +130,13 @@ class Home extends React.Component {
             <div className="subsection subsection--dark subsection--text">
               <img className="fake-h1" src="img/about.svg"/>
               <h3 className="light spaced-br">
-              LIPP TV IS THE FINAL PERFORMANCE PROJECT OF THE LIVE IMAGE PROCESSING AND PERFORMANCE (LIPP) CLASS AT NYU’S ITP. <br/>
-
-LIPP TV IS A CREATIVE RESPONSE TO HOW CODE, VIDEO NETWORKS, AND ART CAN BE USED TO CREATE A NEW EXPERIENCE IN LIVE PERFORMANCE. EACH STUDENT HAS CREATED THEIR OWN SHORT TV SHOW INFLUENCED BY VIDEO ART, EXPERIMENTAL ANIMATION, PUBLIC ACCESS TV, AND MORE. 
-<br/>
-THIS ENTIRE EVENT WAS CREATED REMOTELY AND IS PERFORMED REMOTELY, WITH STUDENTS CREATING THE WEBSITE, COMMERCIALS, MUSIC, AND ANIMATIONS.
-<br/>
-TUNE IN TO LIPP TV AND MAKE SURE TO JOIN THE CHAT AND TALK WITH OUR CREATORS AND PARTICIPATE IN THEIR SHOWS.
+              LIPP TV IS THE FINAL PERFORMANCE PROJECT OF THE LIVE IMAGE PROCESSING AND PERFORMANCE (LIPP) CLASS AT NYU’S ITP.
               </h3>
+              <h3 className="light spaced-br">
+              LIPP TV IS A CREATIVE RESPONSE TO HOW CODE, VIDEO NETWORKS, AND ART CAN BE USED TO CREATE A NEW EXPERIENCE IN LIVE PERFORMANCE. EACH STUDENT HAS CREATED THEIR OWN SHORT TV SHOW INFLUENCED BY VIDEO ART, EXPERIMENTAL ANIMATION, PUBLIC ACCESS TV, AND MORE. 
+              </h3>
+              <h3 className="light spaced-br">THIS ENTIRE EVENT WAS CREATED REMOTELY AND IS PERFORMED REMOTELY, WITH STUDENTS CREATING THE WEBSITE, COMMERCIALS, MUSIC, AND ANIMATIONS.</h3>
+              <h3 className="light spaced-br">TUNE IN TO LIPP TV AND MAKE SURE TO JOIN THE CHAT AND TALK WITH OUR CREATORS AND PARTICIPATE IN THEIR SHOWS.</h3>              
             </div>
             <div className="subsection subsection--image">   
               <img className="about-image" src="/img/char2.png"/>           
@@ -188,7 +187,7 @@ TUNE IN TO LIPP TV AND MAKE SURE TO JOIN THE CHAT AND TALK WITH OUR CREATORS AND
 
             </div>
             <div className="subsection subsection--schedule-right">
-              <h3 className="no-mobile">Starting monday, may 11 <br/>at 8:00 pm Eastern time</h3>
+              <h3 className="no-mobile">Starting monday, may 11 <br/>at 7:30 pm Eastern time</h3>
 
               <div className="program-section">
                 <div className="program-section-item color--yellow type--bold">9:00 PM – 9:30 PM</div>
@@ -226,7 +225,7 @@ TUNE IN TO LIPP TV AND MAKE SURE TO JOIN THE CHAT AND TALK WITH OUR CREATORS AND
           <div className="section section--double section--align-stretch" ref={p => this._creditsRef = p}>
             <div className="subsection">
               <img className="fake-h1" src="img/credits.svg"/>              
-              <h3 className="only-mobile" style={{marginBottom: 20}}>MEET LIPP TV’S PRODUCTION TEAM<br/> WE’RE NOT JUST MATT ROMEINS</h3>
+              <h3 className="only-mobile" style={{marginBottom: 20}}>MEET LIPP TV’S PRODUCTION TEAM<br/> THIS PROJECT WAS MADE POSSIBLE BY THE FOLLOWING PEOPLE</h3>
 
               <div className="program-section">
                 <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold">Matt Romein</div>
@@ -254,8 +253,8 @@ TUNE IN TO LIPP TV AND MAKE SURE TO JOIN THE CHAT AND TALK WITH OUR CREATORS AND
               </div>
 
             </div>
-            <div className="subsection subsection--schedule-right">   
-              <h3 className="no-mobile" >MEET LIPP TV’S PRODUCTION TEAM<br/> WE’RE NOT JUST MATT ROMEINS</h3>
+            <div className="subsection subsection--credits-right">   
+              <h3 className="no-mobile" >MEET LIPP TV’S PRODUCTION TEAM<br/> THIS PROJECT WAS MADE POSSIBLE BY THE FOLLOWING PEOPLE</h3>
               <div className="program-section">
                 <div style={{marginBottom: 0}} className="program-section-item color--green type--bold">Aidan Fowler</div>
                 <div className="program-section-item color--green">GRAPHICS & ANIMATION</div>
