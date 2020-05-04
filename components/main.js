@@ -228,7 +228,7 @@ class Home extends React.Component {
               <h3 className="only-mobile" style={{marginBottom: 20}}>MEET LIPP TV’S PRODUCTION TEAM<br/> THIS PROJECT WAS MADE POSSIBLE BY THE FOLLOWING PEOPLE</h3>
 
               <div className="program-section">
-                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold">Matt Romein</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold"><a href="https://matt-romein.com/" target="__blank" className="color--blue">Matt Romein</a></div>
                 <div className="program-section-item color--blue">EXECUTIVE PRODUCER & HOST</div>
               </div>
 
