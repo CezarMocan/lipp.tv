@@ -321,6 +321,16 @@ img.about-image-fixed {
         margin-bottom: 29px;
       }
     }
+    &--credits-right {
+      margin-top: 25px;
+      @media only screen and (max-width: 768px) {
+        margin-top: 0;
+        padding-top: 0;
+      }
+      h3 {
+        margin-bottom: 29px;
+      }
+    }
 
     img.about-image {
       max-width: 100%;      

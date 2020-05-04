@@ -102,8 +102,9 @@ h4 {
   text-transform: uppercase;
 }
 .spaced-br {
-  br {
-    margin-bottom: 20px;
+  .line-break {
+    height: 20px;
+    width: 10px;
   }  
 }
 .type--bold {
