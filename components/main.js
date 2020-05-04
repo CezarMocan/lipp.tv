@@ -233,22 +233,22 @@ class Home extends React.Component {
               </div>
 
               <div className="program-section">
-                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold">Carrie Wang</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold"><a href="https://carriesijiawang.com/" target="__blank" className="color--green">Carrie Wang</a></div>
                 <div className="program-section-item color--green">CREATIVE DIRECTOR</div>
               </div>
 
               <div className="program-section">
-                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold">Cezar Mocan</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold"><a href="https://cezar.io" target="__blank" className="color--blue">Cezar Mocan</a></div>
                 <div className="program-section-item color--blue">WEB DEVELOPER</div>
               </div>
 
               <div className="program-section">
-                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold">CHRISTINA DACANAY</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold"><a href="https://cdacanay.com" target="__blank" className="color--green">CHRISTINA DACANAY</a></div>
                 <div className="program-section-item color--green">Graphics and animation</div>
               </div>
 
               <div className="program-section">
-                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold">Caren Ye</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold"><a href="https://www.instagram.com/carebearye/" target="__blank" className="color--blue">Caren Ye</a></div>
                 <div className="program-section-item color--blue">GRAPHICS & ANIMATION</div>
               </div>
 
@@ -256,22 +256,22 @@ class Home extends React.Component {
             <div className="subsection subsection--credits-right">   
               <h3 className="no-mobile" >MEET LIPP TV’S PRODUCTION TEAM<br/> THIS PROJECT WAS MADE POSSIBLE BY THE FOLLOWING PEOPLE</h3>
               <div className="program-section">
-                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold">Aidan Fowler</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold"><a href="https://www.aidanlincoln.com/" target="__blank" className="color--green">Aidan Fowler</a></div>
                 <div className="program-section-item color--green">GRAPHICS & ANIMATION</div>
               </div>
 
               <div className="program-section">
-                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold">Nikhil Kumar</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold"><a href="https://www.instagram.com/nkumarcreate/" target="__blank" className="color--blue">Nikhil Kumar</a></div>
                 <div className="program-section-item color--blue">Music</div>
               </div>
 
               <div className="program-section">
-                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold">SYLVAN ZHENG</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold"><a href="https://squidgetx.github.io/" target="__blank" className="color--green">SYLVAN ZHENG</a></div>
                 <div className="program-section-item color--green">Music</div>
               </div>
 
               <div className="program-section">
-                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold">BRENT BAILEY</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold"><a href="https://www.bront.rodeo/index.html" target="__blank" className="color--blue">BRENT BAILEY</a></div>
                 <div className="program-section-item color--blue">Head of advertising</div>
               </div>
 

@@ -8,11 +8,11 @@ export default class HeadComponent extends React.Component {
       <Head>
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
-        <meta name="description" content="LIPP TV IS THE FINAL PERFORMANCE PROJECT OF THE LIVE IMAGE PROCESSING AND PERFORMANCE (LIPP) CLASS AT NYU’S ITP.
-LIPP TV IS A CREATIVE RESPONSE TO HOW CODE, VIDEO NETWORKS, AND ART CAN BE USED TO CREATE A NEW EXPERIENCE IN LIVE PERFORMANCE. EACH STUDENT HAS CREATED THEIR OWN SHORT TV SHOW INFLUENCED BY VIDEO ART, EXPERIMENTAL ANIMATION, PUBLIC ACCESS TV, AND MORE."/>
+        <meta name="description" content="LIPP TV is the final performance project of the Live Image Processing and Performance (LIPP) class at NYU ITP.
+LIPP TV is a creative response to how code, video networks, and art can be used to create a new experience in live performance. Each student has created their own short TV show influenced by video art, experimental animation, public access TV, and more."/>
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
         <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-        <meta property="og:image" content="/img/logo.png"/>
+        <meta property="og:image" content="/img/logo-social.png"/>
         <meta property="og:image:type" content="image/png"/>
         <meta property="og:image:width" content="2416"/>
         <meta property="og:image:height" content="1332"/>
