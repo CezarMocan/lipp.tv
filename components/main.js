@@ -158,8 +158,8 @@ TUNE IN TO LIPP TV AND MAKE SURE TO JOIN THE CHAT AND TALK WITH OUR CREATORS AND
               </div>
               <div className="program-section">
                 <div className="program-section-item"> <span className="color--orange type--bold">STEVE MCQUEEN’S GAME SHOW EXTRAVAGANZA </span>HOSTED BY <a href="http://nickbgrant.com/" className="color--yellow" target="__blank">STEVE MCQUEEN</a></div>
-                <div className="program-section-item"> <span className="color--orange type--bold">MTV JAMS </span>Hosted by <a href="" target="__blank" className="color--yellow">NIKHIL KUMAR</a> </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">NO RESEARCH NATURE </span>Hosted by <a href="" target="__blank" className="color--yellow">BEN MOLL</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">MTV JAMS </span>Hosted by <a href="https://www.instagram.com/nkumarcreate/" target="__blank" className="color--yellow">NIKHIL KUMAR</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">NO RESEARCH NATURE </span>Hosted by <span className="color--yellow">BEN MOLL</span> </div>
               </div>
 
               <div className="program-section">
@@ -169,9 +169,9 @@ TUNE IN TO LIPP TV AND MAKE SURE TO JOIN THE CHAT AND TALK WITH OUR CREATORS AND
                 <div className="program-section-item color--blue type--bold">SPECIAL GUEST INTERVIEWED BY PROFESSOR LIPP</div>
               </div>
               <div className="program-section">
-                <div className="program-section-item"> <span className="color--orange type--bold">STREAM FIGHTER </span>HOSTED BY <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">Christina Dacanay</a> and <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">Cy Kim</a> </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">OFFICE OLYMPICS </span>Hosted by <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">Cezar Mocan</a> </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">RANDOM ACCESS MEMORIES </span>Hosted by <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">SOHAILA MOSBEH</a> and <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">YOUNG MIN CHOI</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">STREAM FIGHTER </span>HOSTED BY <a href="http://www.cdacanay.com/" target="__blank" className="color--yellow">Christina Dacanay</a> and <a href="http://cy-kim.com" target="__blank" className="color--yellow">Cy Kim</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">OFFICE OLYMPICS </span>Hosted by <a href="https://www.instagram.com/cezarmocan/" target="__blank" className="color--yellow">Cezar Mocan</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">RANDOM ACCESS MEMORIES </span>Hosted by <a href="https://www.instagram.com/sohailamosbeh/" target="__blank" className="color--yellow">SOHAILA MOSBEH</a> and <a href="https://www.instagram.com/yumminny/" target="__blank" className="color--yellow">YOUNG MIN CHOI</a> </div>
               </div>
 
               <div className="program-section">
@@ -181,48 +181,43 @@ TUNE IN TO LIPP TV AND MAKE SURE TO JOIN THE CHAT AND TALK WITH OUR CREATORS AND
                 <div className="program-section-item color--blue type--bold">SPECIAL GUEST INTERVIEWED BY PROFESSOR LIPP</div>
               </div>
               <div className="program-section">
-                <div className="program-section-item"> <span className="color--orange type--bold">LIPP MUSIC STATION (LIPP C.A.R.E.) </span>HOSTED BY <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">SACHIKO NAKAJIMA</a></div>
-                <div className="program-section-item"> <span className="color--orange type--bold">MONDOFACTS </span>Hosted by <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">SYLVAN ZHENG</a> </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">VJ HALFTONE </span>Hosted by <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">AIDAN FOWLER</a> and <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">YOUNG MIN CHOI</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">LIPP MUSIC STATION (LIPP C.A.R.E.) </span>HOSTED BY <a href="https://www.facebook.com/sachiko.nakajima.376" target="__blank" className="color--yellow">SACHIKO NAKAJIMA</a></div>
+                <div className="program-section-item"> <span className="color--orange type--bold">MONDOFACTS </span>Hosted by <a href="https://squidgetx.github.io/" target="__blank" className="color--yellow">SYLVAN ZHENG</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">VJ HALFTONE </span>Hosted by <a href="https://www.aidanlincoln.com/" target="__blank" className="color--yellow">AIDAN FOWLER</a></div>
               </div>
-
 
             </div>
             <div className="subsection subsection--schedule-right">
               <h3 className="no-mobile">Starting monday, may 11 <br/>at 8:00 pm Eastern time</h3>
+
               <div className="program-section">
-                <div className="program-section-item color--yellow type--bold">9:30 PM – 9:55 PM</div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Lightbox </span>Hosted by Mingna Li </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Beyond Autopoiesis </span>Hosted by Morgan Mueller </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Motor Y Cuerda </span>Hosted by David Azar </div>
+                <div className="program-section-item color--yellow type--bold">9:00 PM – 9:30 PM</div>
+              </div>
+              <div className="program-section">
+                <div className="program-section-item color--blue type--bold">SPECIAL GUEST INTERVIEWED BY PROFESSOR LIPP</div>
+              </div>
+              <div className="program-section">
+                <div className="program-section-item"> <span className="color--orange type--bold">EASY LEARN MANDARIN </span>HOSTED BY <a href="https://www.instagram.com/wenandkuan/" target="__blank" className="color--yellow">WEN CHEN</a></div>
+                <div className="program-section-item"> <span className="color--orange type--bold">LIFE CHANGING MANDARIN NAME </span>Hosted by <a href="https://www.vinceshao.com" target="__blank" className="color--yellow">VINCE MINGPU SHAO</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">SHOWBIZ! </span>Hosted by <a href="https://www.instagram.com/stacyyyyuan/" target="__blank" className="color--yellow">STACY YUAN</a> </div>
               </div>
 
               <div className="program-section">
-                <div className="program-section-item color--blue type--bold">INTERMISSION WITH LIPP TV HOST PROFESSOR LIPP</div>
+                <div className="program-section-item color--yellow type--bold">9:30 PM – 10:00 PM</div>
+              </div>
+              <div className="program-section">
+                <div className="program-section-item color--blue type--bold">SPECIAL GUEST INTERVIEWED BY PROFESSOR LIPP</div>
+              </div>
+              <div className="program-section">
+                <div className="program-section-item"> <span className="color--orange type--bold">IN THE MOMENT </span>HOSTED BY <a href="https://www.instagram.com/nailahfdavis/" target="__blank" className="color--yellow">NAILAH “LAYO” DAVIS</a></div>
+                <div className="program-section-item"> <span className="color--orange type--bold">CULTIVATED SOUND PRESENTS: PURE MOODS </span>Hosted by <a href="https://www.instagram.com/octonomy/" target="__blank" className="color--yellow">OCTONOMY</a> and <a href="https://www.instagram.com/nic.cab/" target="__blank" className="color--yellow">NIC.CAB</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">TOGETHER IN SYNTHETIC GARDENS </span>Hosted by <a href="https://www.instagram.com/carebearye/" target="__blank" className="color--yellow">CAREN YE</a> </div>
               </div>
 
               <div className="program-section">
-                <div className="program-section-item color--yellow type--bold">10:00 PM – 10:25 PM</div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Amago </span>Hosted by Marcela Mancino </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Urban Dream </span>Hosted by Jingyi Wen </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Dad Practice </span>Hosted by August Luhrs </div>
+                <div className="program-section-item color--blue type--bold">Thanks and wrap-up with PROFESSOR LIPP</div>
               </div>
 
-              
-              <div className="program-section">
-                <div className="program-section-item color--blue type--bold">INTERMISSION WITH LIPP TV HOST PROFESSOR LIPP</div>
-              </div>
-
-              <div className="program-section">
-                <div className="program-section-item color--yellow type--bold">10:30 PM – 10:55 PM</div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Lightbox </span>Hosted by Mingna Li </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Beyond Autopoiesis </span>Hosted by Morgan Mueller </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Motor Y Cuerda </span>Hosted by David Azar </div>
-              </div>
-
-              <div className="program-section">
-                <div className="program-section-item color--blue type--bold">INTERMISSION WITH LIPP TV HOST PROFESSOR LIPP</div>
-              </div>
             </div>
           </div>
 
