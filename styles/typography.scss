@@ -88,7 +88,7 @@ h3 {
   text-transform: uppercase;
   &.light {
     font-family: 'NotoSans-SCM';
-    font-size: 1.65rem;
+    font-size: 1.45rem;
   }
 }
 h4 {
@@ -97,6 +97,11 @@ h4 {
   font-weight: 500;
   line-height: 1.6;
   text-transform: uppercase;
+}
+.spaced-br {
+  br {
+    margin-bottom: 12px;
+  }  
 }
 .type--bold {
   font-family: 'NotoSans-Bold';
