@@ -93,7 +93,7 @@ class Home extends React.Component {
               </div>
               <div className="placeholder-text section-item">
                 <h2>
-                  WATCH LIPP TV LIVE<span class="color--orange"> on monday may 11th, 2020 7:30 pm – 10:30 pm</span> eastern time.
+                  WATCH LIPP TV LIVE<span class="color--orange"> on monday may 11th, 2020 7:30 pm – 10:00 pm</span> eastern time.
                   TUNE IN TO <span class="color--blue">THIS WEBSITE</span> or watch at <a class="color--yellow" href="https://www.twitch.tv/lipp_tv_" target="__blank">TWITCH</a> and <a className="color--yellow" href="https://www.google.com/url?q=https://www.youtube.com/channel/UCPWF2lJ4E_qVG7HrWRiGnhA/live&sa=D&ust=1588548850999000&usg=AFQjCNE1W4LnlR_wGPZAJq3jqMjSG7dIIw" target="__blank">Youtube</a>.                  
                 </h2>
               </div>
@@ -148,7 +148,7 @@ TUNE IN TO LIPP TV AND MAKE SURE TO JOIN THE CHAT AND TALK WITH OUR CREATORS AND
           <div className="section section--double section--align-start" ref={p => this._programRef = p}>
             <div className="subsection">
               <img className="fake-h1" src="img/programs.svg"/>
-              <h3 className="only-mobile" style={{marginBottom: 20}}>Starting monday, may 11 <br/>at 8:00 pm Eastern time</h3>
+              <h3 className="only-mobile" style={{marginBottom: 20}}>Starting monday, may 11 <br/>at 7:30 pm Eastern time</h3>
 
               <div className="program-section">
                 <div className="program-section-item color--yellow type--bold">7:30 PM – 8:00 PM</div>
@@ -175,19 +175,17 @@ TUNE IN TO LIPP TV AND MAKE SURE TO JOIN THE CHAT AND TALK WITH OUR CREATORS AND
               </div>
 
               <div className="program-section">
-                <div className="program-section-item color--blue type--bold">INTERMISSION WITH LIPP TV HOST PROFESSOR LIPP</div>
+                <div className="program-section-item color--yellow type--bold">8:30 PM – 9:00 PM</div>
+              </div>
+              <div className="program-section">
+                <div className="program-section-item color--blue type--bold">SPECIAL GUEST INTERVIEWED BY PROFESSOR LIPP</div>
+              </div>
+              <div className="program-section">
+                <div className="program-section-item"> <span className="color--orange type--bold">LIPP MUSIC STATION (LIPP C.A.R.E.) </span>HOSTED BY <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">SACHIKO NAKAJIMA</a></div>
+                <div className="program-section-item"> <span className="color--orange type--bold">MONDOFACTS </span>Hosted by <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">SYLVAN ZHENG</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">VJ HALFTONE </span>Hosted by <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">AIDAN FOWLER</a> and <a href="http://nickbgrant.com/" target="__blank" className="color--yellow">YOUNG MIN CHOI</a> </div>
               </div>
 
-              <div className="program-section">
-                <div className="program-section-item color--yellow type--bold">9:00 PM – 9:25 PM</div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Lightbox </span>Hosted by Mingna Li </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Beyond Autopoiesis </span>Hosted by Morgan Mueller </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">Motor Y Cuerda </span>Hosted by David Azar </div>
-              </div>
-
-              <div className="program-section">
-                <div className="program-section-item color--blue type--bold">INTERMISSION WITH LIPP TV HOST PROFESSOR LIPP</div>
-              </div>
 
             </div>
             <div className="subsection subsection--schedule-right">
