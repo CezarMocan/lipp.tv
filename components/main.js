@@ -209,7 +209,7 @@ class Home extends React.Component {
               </div>
               <div className="program-section">
                 <div className="program-section-item"> <span className="color--orange type--bold">IN THE MOMENT </span>HOSTED BY <a href="https://www.instagram.com/nailahfdavis/" target="__blank" className="color--yellow">NAILAH “LAYO” DAVIS</a></div>
-                <div className="program-section-item"> <span className="color--orange type--bold">CULTIVATED SOUND PRESENTS: PURE MOODS </span>Hosted by <a href="https://www.instagram.com/octonomy/" target="__blank" className="color--yellow">OCTONOMY</a> and <a href="https://www.instagram.com/nic.cab/" target="__blank" className="color--yellow">NIC.CAB</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">PURE MOODS </span>Hosted by <a href="https://www.instagram.com/octonomy/" target="__blank" className="color--yellow">OCTONOMY</a> and <a href="https://www.instagram.com/nic.cab/" target="__blank" className="color--yellow">NIC.CAB</a> </div>
                 <div className="program-section-item"> <span className="color--orange type--bold">TOGETHER IN SYNTHETIC GARDENS </span>Hosted by <a href="https://www.instagram.com/carebearye/" target="__blank" className="color--yellow">CAREN YE</a> </div>
               </div>
 
