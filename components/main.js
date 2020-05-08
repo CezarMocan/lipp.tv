@@ -196,9 +196,9 @@ class Home extends React.Component {
                 <div className="program-section-item color--blue type--bold">SPECIAL GUEST INTERVIEWED BY PROFESSOR LIPP</div>
               </div>
               <div className="program-section">
-                <div className="program-section-item"> <span className="color--orange type--bold">EASY LEARN MANDARIN </span>HOSTED BY <a href="https://www.instagram.com/wenandkuan/" target="__blank" className="color--yellow">WEN CHEN</a></div>
-                <div className="program-section-item"> <span className="color--orange type--bold">LIFE CHANGING MANDARIN NAME </span>Hosted by <a href="https://www.vinceshao.com" target="__blank" className="color--yellow">VINCE MINGPU SHAO</a> </div>
                 <div className="program-section-item"> <span className="color--orange type--bold">SHOWBIZ! </span>Hosted by <a href="https://www.instagram.com/stacyyyyuan/" target="__blank" className="color--yellow">STACY YUAN</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">EASY LEARN MANDARIN </span>HOSTED BY <a href="https://www.instagram.com/wenandkuan/" target="__blank" className="color--yellow">WEN CHEN</a></div>
+                <div className="program-section-item"> <span className="color--orange type--bold">LIFE CHANGING MANDARIN NAME </span>Hosted by <a href="https://www.vinceshao.com" target="__blank" className="color--yellow">VINCE MINGPU SHAO</a> </div>                
               </div>
 
               <div className="program-section">

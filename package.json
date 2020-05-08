@@ -41,7 +41,8 @@
     "now-build": "next build",
     "export": "rm -rf .next && next build && next export",
     "sync:s3": "AWS_DEFAULT_PROFILE=cezar-cli aws s3 sync out s3://lipp.tv",
-    "deploy": "npm run export && npm run sync:s3"
+    "sync:cloudfront": "AWS_DEFAULT_PROFILE=cezar-cli aws cloudfront create-invalidation --distribution-id E1X0G4RF8ELPES --paths \"/*\"",
+    "deploy": "npm run export && npm run sync:s3 && npm run sync:cloudfront"
   },
   "keywords": [],
   "license": "MIT",
