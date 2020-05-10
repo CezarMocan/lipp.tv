@@ -116,6 +116,7 @@ class Home extends React.Component {
                 channel={channelName}
                 height={streamWidth < 800 ? streamWidth : streamWidth * 9 / 16}
                 muted={false}
+                allowfullscreen={true}
                 targetId="twitch-embed"
                 width={streamWidth}
               /> }
