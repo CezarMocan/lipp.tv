@@ -292,7 +292,7 @@ class Home extends React.Component {
 }
 
 Home.defaultProps = {
-  streamActive: false,
+  streamActive: true,
   channelName: 'lipp_tv_'
 }
 

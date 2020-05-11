@@ -19,7 +19,6 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log('router: ', this.props.router)
     const { router } = this.props
     const chatEmbedSrc = `https://www.twitch.tv/embed/${CHANNEL_NAME}/chat?parent=lipp.tv`
     
@@ -37,9 +36,9 @@ class Home extends React.Component {
       )
     }
 
-    if (router.asPath.indexOf('/active') == 0) {
+    // if (router.asPath.indexOf('/active') == 0) {
       this.streamActive = true
-    }
+    // }
 
     return (
       <>
