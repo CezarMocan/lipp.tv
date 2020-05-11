@@ -31,21 +31,21 @@ class Home extends React.Component {
       streamWidth: window.innerWidth * 0.7
     })
     this.onScroll()
-    window.addEventListener('resize', this.onWindowResize)
+    // this.onWindowResize()
+    // window.addEventListener('resize', this.onWindowResize)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.onWindowResize)
+    // window.removeEventListener('resize', this.onWindowResize)
   }
 
   onWindowResize = () => {
-    this.setState({ 
-      streamWidth: window.innerWidth * 0.7
-    })
+    // this.setState({ 
+    //   streamWidth: window.innerWidth * 0.7
+    // })
   }
 
   onScroll = (e) => {
-    console.log('onScroll', window.scrollY)
     let newHighlight = MENU.WATCH_LIVE
     if (this._aboutRef.getBoundingClientRect().top < 100) newHighlight = MENU.ABOUT
     if (this._programRef.getBoundingClientRect().top < 75) newHighlight = MENU.PROGRAMS
