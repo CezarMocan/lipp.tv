@@ -157,16 +157,16 @@ class Home extends React.Component {
                 <div className="program-section-item color--blue type--bold">INTRODUCTION WITH LIPP TV HOST PROFESSOR LIPP</div>
               </div>
               <div className="program-section">
-                <div className="program-section-item"> <span className="color--orange type--bold">STEVE MCQUEEN’S GAME SHOW EXTRAVAGANZA </span>HOSTED BY <a href="http://nickbgrant.com/" className="color--yellow" target="__blank">STEVE MCQUEEN</a></div>
+                <div className="program-section-item"> <span className="color--orange type--bold">MONDOFACTS </span>Hosted by <a href="https://squidgetx.github.io/" target="__blank" className="color--yellow">SYLVAN ZHENG</a> </div>
                 <div className="program-section-item"> <span className="color--orange type--bold">MTV JAMS </span>Hosted by <a href="https://www.instagram.com/nkumarcreate/" target="__blank" className="color--yellow">NIKHIL KUMAR</a> </div>
-                <div className="program-section-item"> <span className="color--orange type--bold">NO RESEARCH NATURE </span>Hosted by <span className="color--yellow">BEN MOLL</span> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">NO RESEARCH NATURE </span>Hosted by <a href="http://wp.nyu.edu/benjaminmoll" className="color--yellow" target="__blank">BEN MOLL</a> </div>
               </div>
 
               <div className="program-section">
                 <div className="program-section-item color--yellow type--bold">8:00 PM – 8:30 PM</div>
               </div>
               <div className="program-section">
-                <div className="program-section-item color--blue type--bold">SPECIAL GUEST INTERVIEWED BY PROFESSOR LIPP</div>
+                <div className="program-section-item color--blue type--bold">SARAH ROTHBERG INTERVIEWED BY PROFESSOR LIPP</div>
               </div>
               <div className="program-section">
                 <div className="program-section-item"> <span className="color--orange type--bold">STREAM FIGHTER </span>HOSTED BY <a href="http://www.cdacanay.com/" target="__blank" className="color--yellow">Christina Dacanay</a> and <a href="http://cy-kim.com" target="__blank" className="color--yellow">Cy Kim</a> </div>
@@ -178,14 +178,17 @@ class Home extends React.Component {
                 <div className="program-section-item color--yellow type--bold">8:30 PM – 9:00 PM</div>
               </div>
               <div className="program-section">
-                <div className="program-section-item color--blue type--bold">SPECIAL GUEST INTERVIEWED BY PROFESSOR LIPP</div>
+                <div className="program-section-item color--blue type--bold">Dan O'Sullivan INTERVIEWED BY PROFESSOR LIPP</div>
               </div>
               <div className="program-section">
                 <div className="program-section-item"> <span className="color--orange type--bold">LIPP MUSIC STATION (LIPP C.A.R.E.) </span>HOSTED BY <a href="https://www.facebook.com/sachiko.nakajima.376" target="__blank" className="color--yellow">SACHIKO NAKAJIMA</a></div>
-                <div className="program-section-item"> <span className="color--orange type--bold">MONDOFACTS </span>Hosted by <a href="https://squidgetx.github.io/" target="__blank" className="color--yellow">SYLVAN ZHENG</a> </div>
+                <div className="program-section-item"> <span className="color--orange type--bold">STEVE MCQUEEN’S GAME SHOW EXTRAVAGANZA </span>HOSTED BY <a href="http://nickbgrant.com/" className="color--yellow" target="__blank">STEVE MCQUEEN</a></div>
                 <div className="program-section-item"> <span className="color--orange type--bold">VJ HALFTONE </span>Hosted by <a href="https://www.aidanlincoln.com/" target="__blank" className="color--yellow">AIDAN FOWLER</a></div>
               </div>
 
+              <div className="program-section">
+                <div className="program-section-item"> <span className="color--blue type--bold">HALFTIME SPECIAL </span>HOSTED BY <a href="https://www.instagram.com/nailahfdavis/" target="__blank" className="color--yellow">NAILAH “LAYO” DAVIS</a></div>
+              </div>
             </div>
             <div className="subsection subsection--schedule-right">
               <h3 className="no-mobile">Starting monday, may 11 <br/>at 7:30 pm Eastern time</h3>
@@ -194,7 +197,7 @@ class Home extends React.Component {
                 <div className="program-section-item color--yellow type--bold">9:00 PM – 9:30 PM</div>
               </div>
               <div className="program-section">
-                <div className="program-section-item color--blue type--bold">SPECIAL GUEST INTERVIEWED BY PROFESSOR LIPP</div>
+                <div className="program-section-item color--blue type--bold">Brent AI INTERVIEWED BY PROFESSOR LIPP</div>
               </div>
               <div className="program-section">
                 <div className="program-section-item"> <span className="color--orange type--bold">EASY LEARN MANDARIN </span>HOSTED BY <a href="https://www.instagram.com/wenandkuan/" target="__blank" className="color--yellow">WEN CHEN</a></div>
@@ -206,10 +209,9 @@ class Home extends React.Component {
                 <div className="program-section-item color--yellow type--bold">9:30 PM – 10:00 PM</div>
               </div>
               <div className="program-section">
-                <div className="program-section-item color--blue type--bold">SPECIAL GUEST INTERVIEWED BY PROFESSOR LIPP</div>
+                <div className="program-section-item color--blue type--bold">Ali Santana INTERVIEWED BY PROFESSOR LIPP</div>
               </div>
               <div className="program-section">
-                <div className="program-section-item"> <span className="color--orange type--bold">IN THE MOMENT </span>HOSTED BY <a href="https://www.instagram.com/nailahfdavis/" target="__blank" className="color--yellow">NAILAH “LAYO” DAVIS</a></div>
                 <div className="program-section-item"> <span className="color--orange type--bold">PURE MOODS </span>Hosted by <a href="https://www.instagram.com/octonomy/" target="__blank" className="color--yellow">OCTONOMY</a> and <a href="https://www.instagram.com/nic.cab/" target="__blank" className="color--yellow">NIC.CAB</a> </div>
                 <div className="program-section-item"> <span className="color--orange type--bold">TOGETHER IN SYNTHETIC GARDENS </span>Hosted by <a href="https://www.instagram.com/carebearye/" target="__blank" className="color--yellow">CAREN YE</a> </div>
               </div>
@@ -253,9 +255,6 @@ class Home extends React.Component {
                 <div className="program-section-item color--blue">GRAPHICS & ANIMATION</div>
               </div>
 
-            </div>
-            <div className="subsection subsection--credits-right">   
-              <h3 className="no-mobile" >MEET LIPP TV’S PRODUCTION TEAM<br/> THIS PROJECT WAS MADE POSSIBLE BY THE FOLLOWING PEOPLE</h3>
               <div className="program-section">
                 <div style={{marginBottom: 0}} className="program-section-item color--green type--bold"><a href="https://www.aidanlincoln.com/" target="__blank" className="color--green">Aidan Fowler</a></div>
                 <div className="program-section-item color--green">GRAPHICS & ANIMATION</div>
@@ -266,17 +265,36 @@ class Home extends React.Component {
                 <div className="program-section-item color--blue">Music</div>
               </div>
 
+            </div>
+            <div className="subsection subsection--credits-right">   
+              <h3 className="no-mobile" >MEET LIPP TV’S PRODUCTION TEAM<br/> THIS PROJECT WAS MADE POSSIBLE BY THE FOLLOWING PEOPLE</h3>
               <div className="program-section">
                 <div style={{marginBottom: 0}} className="program-section-item color--green type--bold"><a href="https://squidgetx.github.io/" target="__blank" className="color--green">SYLVAN ZHENG</a></div>
                 <div className="program-section-item color--green">Music</div>
               </div>
 
               <div className="program-section">
-                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold"><a href="https://www.bront.rodeo/index.html" target="__blank" className="color--blue">BRENT BAILEY</a></div>
-                <div className="program-section-item color--blue">Head of advertising</div>
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold"><a href="https://www.facebook.com/sachiko.nakajima.376" target="__blank" className="color--blue">Sachiko Nakajima</a></div>
+                <div className="program-section-item color--blue">Music</div>
               </div>
 
-              <h3 className="light" style={{marginTop: '25px'}}>LIPP TV is presented in collaboration with <a className="color--yellow" href="https://culturehub.org" target="__blank">CultureHub</a>.</h3>
+              <div className="program-section">
+                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold"><a href="https://www.bront.rodeo/index.html" target="__blank" className="color--green">BRENT BAILEY</a></div>
+                <div className="program-section-item color--green">Head of advertising</div>
+              </div>
+
+              <div className="program-section">
+                <div style={{marginBottom: 0}} className="program-section-item color--blue type--bold"><a href="https://carriesijiawang.com/" target="__blank" className="color--blue">Carrie Wang</a></div>
+                <div className="program-section-item color--blue">STAGE MANAGER</div>
+              </div>
+
+              <div className="program-section">
+                <div style={{marginBottom: 0}} className="program-section-item color--green type--bold"><a href="https://www.higabriella.com/" target="__blank" className="color--green">GABRIELLA GARCIA</a></div>
+                <div className="program-section-item color--green">BACKSTAGE ASSISTANT</div>
+              </div>
+
+              <h3 className="light color--orange" style={{marginTop: '25px'}}>Special thanks to <a className="color--yellow" href="https://culturehub.org" target="__blank">CultureHub,</a> <a className="color--green" href="https://yotammann.info/" target="__blank">Yotam Mann</a> and <a className="color--blue" href="https://www.lydiajessup.me/" target="__blank">Lydia Jessup.</a> </h3>
+              <h3 className="light" style={{marginTop: '15px'}}>LIPP TV is presented in collaboration with <a className="color--yellow" href="https://culturehub.org" target="__blank">CultureHub</a>.</h3>
             </div>
           </div>
 
