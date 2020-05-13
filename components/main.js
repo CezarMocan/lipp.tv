@@ -113,7 +113,7 @@ class Home extends React.Component {
             <div className="twitch-stream section section--no-margin-top" ref={p => this._wlRef = p}>
               { TwitchEmbedVideo && <TwitchEmbedVideo
                 autoplay
-                channel={channelName}
+                video="618250290"
                 height={streamWidth < 800 ? streamWidth : streamWidth * 9 / 16}
                 muted={false}
                 allowfullscreen={true}
@@ -148,7 +148,7 @@ class Home extends React.Component {
           <div className="section section--double section--align-start" ref={p => this._programRef = p}>
             <div className="subsection">
               <img className="fake-h1" src="img/programs.svg"/>
-              <h3 className="only-mobile" style={{marginBottom: 20}}>Starting monday, may 11 <br/>at 7:30 pm Eastern time</h3>
+              <h3 className="only-mobile" style={{marginBottom: 20}}>monday, may 11th 2020 <br/>at 7:30pm </h3>
 
               <div className="program-section">
                 <div className="program-section-item color--yellow type--bold">7:30 PM – 8:00 PM</div>
@@ -191,7 +191,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="subsection subsection--schedule-right">
-              <h3 className="no-mobile">Starting monday, may 11 <br/>at 7:30 pm Eastern time</h3>
+              <h3 className="no-mobile">monday, may 11th 2020 <br/>at 7:30pm </h3>
 
               <div className="program-section">
                 <div className="program-section-item color--yellow type--bold">9:00 PM – 9:30 PM</div>
