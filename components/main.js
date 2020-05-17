@@ -113,7 +113,7 @@ class Home extends React.Component {
             <div className="twitch-stream section section--no-margin-top" ref={p => this._wlRef = p}>
               { TwitchEmbedVideo && <TwitchEmbedVideo
                 autoplay
-                video="618250290"
+                video="619925172"
                 height={streamWidth < 800 ? streamWidth : streamWidth * 9 / 16}
                 muted={false}
                 allowfullscreen={true}
