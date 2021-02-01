@@ -1,0 +1,243 @@
+@import 'custom-aws.scss';
+@import "~video-react/styles/scss/video-react";
+@import "~react-awesome-slider/dist/styles";
+
+$break_xl: 1500px;
+$break_lg: 1200px;
+$break_med: 900px;
+$break_sm: 600px;
+
+$spacing-small: 0.75rem;
+$spacing-regular: 1rem;
+
+$color-light: white;
+$color-dark: black;
+$color-highlight: #FFBB00;
+
+.color--light {
+  color: $color-light;
+}
+
+.color--dark {
+  color: $color-dark;  
+}
+
+.color--highlight {
+  color: $color-highlight;
+}
+
+.full-width-height {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  background: var(--white);
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input, button, textarea {
+  &:focus {
+    outline: none;
+  }
+}
+
+.hero {
+  display: flex;
+  &__image {
+    flex: 1;
+    width: 100vw;
+    background-color: black;
+  }
+  &__footer {
+    flex: 0;
+    background: white;
+    font-family: 'Druk';
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 8rem;
+    padding-top: 10px;
+  }
+}
+
+.module {
+  height: 100vh;
+  // width: 100vw;
+  background: $color-dark;
+  color: $color-light;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: flex-end;
+
+  &__header-lg {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    text-align: center;
+
+    background-repeat: no-repeat;    
+    background-position: center;    
+    background-origin: border-box;    
+    background-size: contain;
+
+    z-index: 2;
+
+    &.creative {
+      background-image: url(/creative.svg);
+    }
+    &.production {
+      background-image: url(/production.svg);
+    }
+    &.post {
+      background-image: url(/post.svg);
+    }
+  }
+  &__product-list {
+    width: 100%;
+    z-index: 4;
+    &__item {
+      width: 100%;
+      padding: $spacing-small $spacing-regular;
+
+      color: $color-dark;
+      background-color: $color-light;
+      border-top: 1px solid $color-dark;
+
+      &.with-custom-cursor {
+        cursor: none;
+      }
+  
+      &.open {
+        background-color: $color-highlight; 
+      }
+
+      &:hover {
+        // cursor: pointer;
+        background-color: $color-highlight;        
+      }
+    }
+  }
+
+  &__accordion-container {
+    position: relative;
+    height: 0;
+    background-color: blue;
+    cursor: none !important;
+
+    &.open {
+      // height: 56.25vw;
+      // height: calc(100vh - 45px);
+      // height: 40vh;
+    }
+
+    transition: height 0.5s ease-in-out;
+
+    &__description-overlay {
+        z-index: 10; // need z-index in order for the overlay to show up on top of the react-awesome-slider
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: $spacing-small $spacing-regular;
+        background-color: rgba(0, 0, 0, 0.9);        
+        transition: opacity 0.25s ease;
+        opacity: 0;
+        display: none;
+
+      &.enter-state, &.enter-active, &.enter-done, &.exit-state, &.exit-active {
+        display: block;
+      }
+
+      &.enter-active, &.enter-done {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.custom-cursor {
+  &__container {
+    position: fixed;
+    z-index: 10000;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    color: $color-light;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__image {
+      position: absolute;
+      left: -10px;
+      bottom: -10px;
+      width: 250px;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    &__type {
+      position: relative;
+    }
+  }
+}
+
+.media-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $color-highlight;
+}
+
+.image-player {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.video-player {
+  display: block;
+  video {
+    object-fit: cover;
+    object-position: center;
+  }
+  &.hidden {
+    .video-react-loading-spinner {
+      display: none !important;
+    }
+  }
+
+  .video-react-big-play-button {
+    display: none;
+  }
+
+  .video-react-bezel {
+    display: none;
+  }
+}
+
+.project-description__container {  
+  max-width: 66%;
+  @media (max-width: $break_lg) {
+    max-width: 80%;
+  }
+  @media (max-width: $break_med) {
+    max-width: 100%;
+  }
+}
+
+@import 'typography.scss';
+@import 'arrows.scss';

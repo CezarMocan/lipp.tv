@@ -1,0 +1,39 @@
+
+.arrow {
+  &__down {
+    width: 0px;
+    height: 0px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid $color-light;
+    margin-left: -2px;
+  }
+
+  &__up {
+    width: 0px;
+    height: 0px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid $color-light;
+    margin-right: -2px;
+  }
+
+  &__left {
+    width: 0px;
+    height: 0px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid $color-light;
+    margin-top: -2px;
+  }
+
+  &__right {
+    width: 0px;
+    height: 0px;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid $color-light;
+    margin-bottom: -2px;
+  }
+
+}
