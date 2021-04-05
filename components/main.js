@@ -1,9 +1,7 @@
 import React from 'react'
-import { get } from 'dotty';
 import classnames from 'classnames'
 import "../styles/styles.scss"
 import Header from './header'
-import { scrollTo } from './utils'
 
 const MENU = {
   ABOUT: 'About',
@@ -31,18 +29,6 @@ class Home extends React.Component {
       streamWidth: window.innerWidth * 0.7
     })
     this.onScroll()
-    // this.onWindowResize()
-    // window.addEventListener('resize', this.onWindowResize)
-  }
-
-  componentWillUnmount() {
-    // window.removeEventListener('resize', this.onWindowResize)
-  }
-
-  onWindowResize = () => {
-    // this.setState({ 
-    //   streamWidth: window.innerWidth * 0.7
-    // })
   }
 
   onScroll = (e) => {
@@ -72,7 +58,6 @@ class Home extends React.Component {
     return (
       <div className="container">
         <div className="bg-grid"></div>
-        {/* <img className="about-image-fixed" src="/img/face.png"/> */}
         <div className="pre-header-padding"></div>
         <Header 
           highlight={highlight}
@@ -299,7 +284,6 @@ class Home extends React.Component {
           </div>
 
           <div className="section section--footer section--align-stretch">
-            {/* <img src="/img/logo.png"/> */}
             <div style={{height: '75px'}}></div>
           </div>
 

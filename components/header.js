@@ -1,11 +1,11 @@
 import React from 'react'
-import { get } from 'dotty';
 import classnames from 'classnames'
 import "../styles/styles.scss"
 
 const HEADER_TOP = 100
 var LOGO_SIZE_MIN = 75
 var LOGO_SIZE_MAX = 250
+
 const MENU = {
   ABOUT: 'About',
   PROGRAMS: 'Programs',
@@ -14,13 +14,6 @@ const MENU = {
 }
 
 class Header extends React.Component {
-  state = {
-  }
-
-  constructor({ activeSlug }) {
-    super();
-  }
-
   onWindowScroll = (e) => {
     // Change logo size
     let factor = 0
@@ -45,10 +38,6 @@ class Header extends React.Component {
     if (window.innerWidth >= 3200) LOGO_SIZE_MAX = 11
     if (window.innerWidth <= 1124) LOGO_SIZE_MAX = 14
     if (window.innerWidth <= 768) LOGO_SIZE_MAX = 11
-    // if (window.innerWidth <= 464) { 
-    //   LOGO_SIZE_MAX = 75
-    //   LOGO_SIZE_MIN = 50
-    // }
     this.onWindowScroll()
   }
 

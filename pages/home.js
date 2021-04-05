@@ -7,20 +7,16 @@ import Head from '../components/head'
 const sleep = (s) => new Promise((res, rej) => setTimeout(res, s * 1000))
 
 const CHANNEL_NAME = 'lipp_tv_'
+const CHAT_EMBED_SRC = `https://www.twitch.tv/embed/${CHANNEL_NAME}/chat?parent=lipp.tv`
 
 class Home extends React.Component {
   constructor(props) {
     super(props)
     this.streamActive = false
   }
-  static async getInitialProps(ctx) {
-    return {
-    }
-  }
 
   render() {
-    const { router } = this.props
-    const chatEmbedSrc = `https://www.twitch.tv/embed/${CHANNEL_NAME}/chat?parent=lipp.tv`
+    const { router } = this.props    
     
     if (router.asPath.indexOf('/chat-only') == 0) {
       return (
@@ -28,7 +24,7 @@ class Home extends React.Component {
             <iframe frameborder="0"
                     scrolling="yes"
                     id="chat_embed"
-                    src={chatEmbedSrc}
+                    src={CHAT_EMBED_SRC}
                     height="600"
                     width="800">
             </iframe>
@@ -36,9 +32,7 @@ class Home extends React.Component {
       )
     }
 
-    // if (router.asPath.indexOf('/active') == 0) {
-      this.streamActive = true
-    // }
+    this.streamActive = true
 
     return (
       <>
