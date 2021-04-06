@@ -1,6 +1,6 @@
 **LIPP.TV**
 
-*Setup instructions*
+Setup instructions
 
 1. Clone the repository
 
